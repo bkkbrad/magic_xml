@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: XML_Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />XML_Tests</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/tests_rb.html">tests.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Test::Unit::TestCase
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000060">test_add</a></li>
+  <li><a href="#M000059">test_attr</a></li>
+  <li><a href="#M000077">test_child</a></li>
+  <li><a href="#M000074">test_chilrden</a></li>
+  <li><a href="#M000056">test_constructors</a></li>
+  <li><a href="#M000101">test_deep_map</a></li>
+  <li><a href="#M000078">test_descendant</a></li>
+  <li><a href="#M000075">test_descendants</a></li>
+  <li><a href="#M000064">test_dup</a></li>
+  <li><a href="#M000061">test_each</a></li>
+  <li><a href="#M000089">test_entities</a></li>
+  <li><a href="#M000063">test_eqeq</a></li>
+  <li><a href="#M000057">test_escapes</a></li>
+  <li><a href="#M000076">test_exec</a></li>
+  <li><a href="#M000086">test_inpsect</a></li>
+  <li><a href="#M000099">test_load</a></li>
+  <li><a href="#M000062">test_map</a></li>
+  <li><a href="#M000066">test_monadic</a></li>
+  <li><a href="#M000100">test_multielement_selectors</a></li>
+  <li><a href="#M000065">test_normalize</a></li>
+  <li><a href="#M000067">test_parse</a></li>
+  <li><a href="#M000085">test_parse_as_twigs</a></li>
+  <li><a href="#M000069">test_parse_extra_cdata</a></li>
+  <li><a href="#M000072">test_parse_extra_comment</a></li>
+  <li><a href="#M000071">test_parse_extra_dtd</a></li>
+  <li><a href="#M000068">test_parse_extra_escapes</a></li>
+  <li><a href="#M000070">test_parse_extra_qxml</a></li>
+  <li><a href="#M000073">test_parse_file</a></li>
+  <li><a href="#M000098">test_parsing_entities</a></li>
+  <li><a href="#M000096">test_parsing_extras</a></li>
+  <li><a href="#M000097">test_parsing_nopp</a></li>
+  <li><a href="#M000090">test_patterns</a></li>
+  <li><a href="#M000091">test_patterns_2</a></li>
+  <li><a href="#M000092">test_patterns_3</a></li>
+  <li><a href="#M000093">test_patterns_any_all</a></li>
+  <li><a href="#M000102">test_pretty_printer</a></li>
+  <li><a href="#M000087">test_pseudoattributes_read</a></li>
+  <li><a href="#M000088">test_pseudoattributes_write</a></li>
+  <li><a href="#M000081">test_range</a></li>
+  <li><a href="#M000084">test_real_method_missing</a></li>
+  <li><a href="#M000094">test_remove_pretty_printing</a></li>
+  <li><a href="#M000095">test_remove_pretty_printing_conditional</a></li>
+  <li><a href="#M000080">test_renormalize</a></li>
+  <li><a href="#M000058">test_sort_by</a></li>
+  <li><a href="#M000082">test_subsequence</a></li>
+  <li><a href="#M000079">test_text</a></li>
+  <li><a href="#M000083">test_xml_bang</a></li>
+  </ul>
+
+
+
+
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000060"></a><b>test_add</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html">XML</a>#&lt;&lt; method for adding children
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000060_source')" id="l_M000060_source">show source</a> ]</p>
+  <div id="M000060_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 53</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_add</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:p</span>, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;, &quot;</span>
+        <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;world!&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p&gt;Hello, world!&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#&lt;&lt; should work&quot;</span>)
+
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>)
+        <span class="ruby-identifier">b</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#&lt;&lt; should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000059"></a><b>test_attr</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html">XML</a>#[] and <a href="XML.html">XML</a>#[]= for
+attribute access
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000059_source')" id="l_M000059_source">show source</a> ]</p>
+  <div id="M000059_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 43</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_attr</span>
+        <span class="ruby-identifier">foo</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:x</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>})
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;1&quot;</span>, <span class="ruby-identifier">foo</span>[<span class="ruby-identifier">:x</span>], <span class="ruby-value str">&quot;Attribute reading should work&quot;</span>)
+        <span class="ruby-identifier">foo</span>[<span class="ruby-identifier">:x</span>] = <span class="ruby-value str">&quot;2&quot;</span>
+        <span class="ruby-identifier">foo</span>[<span class="ruby-identifier">:y</span>] = <span class="ruby-value str">&quot;3&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;2&quot;</span>, <span class="ruby-identifier">foo</span>[<span class="ruby-identifier">:x</span>], <span class="ruby-value str">&quot;Attribute writing should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;3&quot;</span>, <span class="ruby-identifier">foo</span>[<span class="ruby-identifier">:y</span>], <span class="ruby-value str">&quot;Attribute writing should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000077"></a><b>test_child</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000048">XML#child</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000077_source')" id="l_M000077_source">show source</a> ]</p>
+  <div id="M000077_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 294</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_child</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar a='1'/&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar a='1'/&gt;&lt;bar a='2'/&gt;&lt;/foo&gt;&quot;</span>)
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">child</span>(<span class="ruby-identifier">:bar</span>), <span class="ruby-value str">&quot;XML#child should return nil if there are no matching children&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'/&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">child</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#child should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'/&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">child</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#child should return first child if there are many&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='2'/&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">child</span>({<span class="ruby-identifier">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'2'</span>}).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#child should support patterns&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000074"></a><b>test_chilrden</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000050">XML#children</a> and <a
+href="Array.html#M000103">Array#children</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000074_source')" id="l_M000074_source">show source</a> ]</p>
+  <div id="M000074_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 260</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_chilrden</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;1&quot;</span>})
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;3&quot;</span>})
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;2&quot;</span>}, <span class="ruby-identifier">b</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">foo</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">c</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">d</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">f</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">a</span>,<span class="ruby-identifier">c</span>], <span class="ruby-identifier">e</span>, <span class="ruby-value str">&quot;XML#children(tag) should return tag-tagged children&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">b</span>], <span class="ruby-identifier">f</span>, <span class="ruby-value str">&quot;Array#children(tag) should return tag-tagged children of its elements&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000056"></a><b>test_constructors</b>()
+  </div>
+  <div class="description">
+  <p>
+Test whether <a href="XML.html#M000026">XML.new</a> constructors work
+(without monadic case)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000056_source')" id="l_M000056_source">show source</a> ]</p>
+  <div id="M000056_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 10</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_constructors</span>
+        <span class="ruby-identifier">br</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:br</span>)
+        <span class="ruby-identifier">h3</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h3</span>, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">a</span>  = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:a</span>, {<span class="ruby-identifier">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;http://www.google.com/&quot;</span>}, <span class="ruby-value str">&quot;Google&quot;</span>)
+        <span class="ruby-identifier">ul</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:ul</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:li</span>, <span class="ruby-value str">&quot;Hello&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:li</span>, <span class="ruby-value str">&quot;world&quot;</span>))
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;br/&gt;&quot;</span>, <span class="ruby-identifier">br</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Constructors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;h3&gt;Hello&lt;/h3&gt;&quot;</span>, <span class="ruby-identifier">h3</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Constructors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a href='http://www.google.com/'&gt;Google&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Constructors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;ul&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;li&gt;world&lt;/li&gt;&lt;/ul&gt;&quot;</span>, <span class="ruby-identifier">ul</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Constructors should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000101"></a><b>test_deep_map</b>()
+  </div>
+  <div class="description">
+  <p>
+Test deep_map
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000101_source')" id="l_M000101_source">show source</a> ]</p>
+  <div id="M000101_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 801</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_deep_map</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;x&lt;/bar&gt; &lt;foo&gt;&lt;bar&gt;y&lt;/bar&gt;&lt;/foo&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">deep_map</span>(<span class="ruby-identifier">:bar</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_sym</span>) }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;x/&gt; &lt;foo&gt;&lt;y/&gt;&lt;/foo&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#deep_map should work&quot;</span>)
+
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;x&lt;/bar&gt; &lt;bar&gt;&lt;bar&gt;y&lt;/bar&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">deep_map</span>(<span class="ruby-identifier">:bar</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:xyz</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">attrs</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">c</span>.<span class="ruby-identifier">children</span>) }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;xyz&gt;x&lt;/xyz&gt; &lt;xyz&gt;&lt;bar&gt;y&lt;/bar&gt;&lt;/xyz&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#deep_map should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000078"></a><b>test_descendant</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000049">XML#descendant</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000078_source')" id="l_M000078_source">show source</a> ]</p>
+  <div id="M000078_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 306</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_descendant</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar a='1'/&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar a='1'/&gt;&lt;bar a='2'/&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar a='1'&gt;&lt;bar a='2'/&gt;&lt;/bar&gt;&lt;bar a='3'/&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;foo&gt;&lt;bar a='1'/&gt;&lt;/foo&gt;&lt;bar a='2'/&gt;&lt;/foo&gt;&quot;</span>)
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">:bar</span>), <span class="ruby-value str">&quot;XML#descendant should return nil if there are no matching descendants&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'/&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'/&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should return first descendant if there are many&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'&gt;&lt;bar a='2'/&gt;&lt;/bar&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should return first descendant if there are many&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'/&gt;&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">:bar</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should return first descendant if there are many&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='2'/&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">descendant</span>({<span class="ruby-identifier">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'2'</span>}).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should support patterns&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='2'/&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">descendant</span>({<span class="ruby-identifier">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'2'</span>}).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should support patterns&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='2'/&gt;&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">descendant</span>({<span class="ruby-identifier">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'2'</span>}).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#descendant should support patterns&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000075"></a><b>test_descendants</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000051">XML#descendants</a> and <a
+href="Array.html#M000104">Array#descendants</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000075_source')" id="l_M000075_source">show source</a> ]</p>
+  <div id="M000075_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 272</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_descendants</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;1&quot;</span>})
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;3&quot;</span>})
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar</span>({<span class="ruby-identifier">:x=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;2&quot;</span>}, <span class="ruby-identifier">b</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">foo</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">c</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">d</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">f</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">a</span>,<span class="ruby-identifier">c</span>,<span class="ruby-identifier">b</span>], <span class="ruby-identifier">e</span>, <span class="ruby-value str">&quot;XML#descendants(tag) should return tag-tagged descendants&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">b</span>], <span class="ruby-identifier">f</span>, <span class="ruby-value str">&quot;Array#descendants(tag) should return tag-tagged descendants of its elements&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000064"></a><b>test_dup</b>()
+  </div>
+  <div class="description">
+  <p>
+Test dup-with-block method
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000064_source')" id="l_M000064_source">show source</a> ]</p>
+  <div id="M000064_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 136</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_dup</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>}, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">:bar</span> }
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:a</span>] = <span class="ruby-value str">&quot;2&quot;</span> }
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;, world!&quot;</span> }
+       
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo a='1'&gt;Hello&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup{} should not modify its argument&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar a='1'&gt;Hello&lt;/bar&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup{} should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo a='2'&gt;Hello&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup{} should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo a='1'&gt;Hello, world!&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup{} should work&quot;</span>)
+       
+        <span class="ruby-comment cmt"># Deep copy test</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h3</span>, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">a</span>))
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;, world!&quot;</span>
+       
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;&lt;h3&gt;Hello, world!&lt;/h3&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup should make a deep copy&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;&lt;h3&gt;Hello&lt;/h3&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#dup should make a deep copy&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000061"></a><b>test_each</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000012">XML#each</a> method for iterating over
+children
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000061_source')" id="l_M000061_source">show source</a> ]</p>
+  <div id="M000061_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 65</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_each</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:p</span>, <span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-value str">&quot;, &quot;</span>, <span class="ruby-value str">&quot;world&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:br</span>))
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>}
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;Hello, world&lt;br/&gt;&quot;</span>, <span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#each should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000089"></a><b>test_entities</b>()
+  </div>
+  <div class="description">
+  <p>
+Test entity unescaping
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000089_source')" id="l_M000089_source">show source</a> ]</p>
+  <div id="M000089_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 534</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_entities</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&amp;#xA5;&amp;#xFC;&amp;#x2020;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&amp;#165;&amp;#252;&amp;#8224;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&amp;yen;&amp;uuml;&amp;dagger;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-value str">&quot;&quot;</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">text</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;Entity unescaping on XML#Parse should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;Entity unescaping on XML#Parse should work&quot;</span>)
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Entity escaping on XML#to_s should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Entity escaping on XML#to_s should work&quot;</span>)
+
+        <span class="ruby-comment cmt"># The escapes assume \XXX are byte escapes and the encoding is UTF-8</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;\302\245\303\274\342\200\240&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;Entity unescaping on XML#Parse should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;\302\245\303\274\342\200\240&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Entity escaping on XML#to_s should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000063"></a><b>test_eqeq</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html">XML</a>#==
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000063_source')" id="l_M000063_source">show source</a> ]</p>
+  <div id="M000063_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 92</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_eqeq</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">a</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a!</span>=<span class="ruby-identifier">c</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+       
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:bar</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>})
+        <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:bar</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>})
+        <span class="ruby-identifier">f</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:bar</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;2&quot;</span>})
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">d</span><span class="ruby-operator">==</span><span class="ruby-identifier">d</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">d</span><span class="ruby-operator">==</span><span class="ruby-identifier">e</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">d!</span>=<span class="ruby-identifier">f</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+       
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello, world!&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello, world!&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-value str">&quot;, world!&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">a</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">c</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a!</span>=<span class="ruby-identifier">d</span>, <span class="ruby-value str">&quot;XML#== should work&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">d</span><span class="ruby-operator">==</span><span class="ruby-identifier">e</span>, <span class="ruby-value str">&quot;Empty children should not affect XML#==&quot;</span>)
+       
+        <span class="ruby-comment cmt"># Highly pathological case</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;ab&quot;</span>, <span class="ruby-value str">&quot;cde&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-value str">&quot;fg&quot;</span>, <span class="ruby-value str">&quot;hijk&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-value str">&quot;abc&quot;</span>, <span class="ruby-value str">&quot;d&quot;</span>, <span class="ruby-value str">&quot;efg&quot;</span>, <span class="ruby-value str">&quot;h&quot;</span>, <span class="ruby-value str">&quot;ijk&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">==</span><span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#== should work with differently split Strings too&quot;</span>)
+        
+        <span class="ruby-comment cmt"># String vs XML</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;Hello&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>) {<span class="ruby-identifier">foo!</span>}
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>) {<span class="ruby-identifier">bar!</span>}
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a!</span>=<span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#== should work with children of different types&quot;</span>)
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">b!</span>=<span class="ruby-identifier">c</span>, <span class="ruby-value str">&quot;XML#== should work recursively&quot;</span>)
+
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>) {<span class="ruby-identifier">foo!</span>; <span class="ruby-identifier">bar!</span>}
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>) {<span class="ruby-identifier">foo!</span>; <span class="ruby-identifier">foo!</span>}
+        <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">a!</span>=<span class="ruby-identifier">b</span>, <span class="ruby-value str">&quot;XML#== should work recursively&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000057"></a><b>test_escapes</b>()
+  </div>
+  <div class="description">
+  <p>
+Test character escaping on output, in text and in attribute values
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000057_source')" id="l_M000057_source">show source</a> ]</p>
+  <div id="M000057_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 23</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_escapes</span>
+        <span class="ruby-identifier">p</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:p</span>, <span class="ruby-value str">&quot;&lt; &gt; &amp;&quot;</span>)
+        <span class="ruby-identifier">foo</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, {<span class="ruby-identifier">:bar=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;&lt; &gt; ' \&quot; &amp;&quot;</span>})
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p&gt;&amp;lt; &amp;gt; &amp;amp;&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Character escaping should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo bar='&amp;lt; &amp;gt; &amp;apos; &amp;quot; &amp;amp;'/&gt;&quot;</span>, <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Character escaping in attributes should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000076"></a><b>test_exec</b>()
+  </div>
+  <div class="description">
+  <p>
+Test XML#exec! monadic interface
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000076_source')" id="l_M000076_source">show source</a> ]</p>
+  <div id="M000076_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 284</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_exec</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">foo</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">exec!</span> {
+            <span class="ruby-identifier">bar!</span> { <span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot;Hello&quot;</span> }
+            <span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot;world&quot;</span>
+        }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;Hello&lt;/bar&gt;world&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#exec! should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000086"></a><b>test_inpsect</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000028">XML#inspect</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000086_source')" id="l_M000086_source">show source</a> ]</p>
+  <div id="M000086_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 491</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_inpsect</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-identifier">xml</span>(<span class="ruby-identifier">:a</span>, <span class="ruby-identifier">xml</span>(<span class="ruby-identifier">:b</span>, <span class="ruby-identifier">xml</span>(<span class="ruby-identifier">:c</span>)))
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">xml</span>(<span class="ruby-identifier">:d</span>)
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a&gt;...&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span>, <span class="ruby-value str">&quot;XML#inspect should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a&gt;...&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">0</span>), <span class="ruby-value str">&quot;XML#inspect(levels) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a&gt;&lt;b&gt;...&lt;/b&gt;&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">1</span>), <span class="ruby-value str">&quot;XML#inspect(levels) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a&gt;&lt;b&gt;&lt;c/&gt;&lt;/b&gt;&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">2</span>), <span class="ruby-value str">&quot;XML#inspect(levels) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;a&gt;&lt;b&gt;&lt;c/&gt;&lt;/b&gt;&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">3</span>), <span class="ruby-value str">&quot;XML#inspect(levels) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;d/&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">inspect</span>, <span class="ruby-value str">&quot;XML#inspect should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;d/&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">0</span>), <span class="ruby-value str">&quot;XML#inspect should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;d/&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-value">1</span>), <span class="ruby-value str">&quot;XML#inspect should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000099"></a><b>test_load</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000019">XML.load</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000099_source')" id="l_M000099_source">show source</a> ]</p>
+  <div id="M000099_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 778</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_load</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value str">&quot;test.xml&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">&quot;test.xml&quot;</span>))
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value str">&quot;string:&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-value str">&quot;file:test.xml&quot;</span>)
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#load should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#load should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#load should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#load should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000062"></a><b>test_map</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000053">XML#map</a> method
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000062_source')" id="l_M000062_source">show source</a> ]</p>
+  <div id="M000062_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 73</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_map</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:body</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h3</span>, <span class="ruby-value str">&quot;One&quot;</span>), <span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h3</span>, <span class="ruby-value str">&quot;Two&quot;</span>))
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:h3</span>
+                <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h2</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">attrs</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">c</span>.<span class="ruby-identifier">contents</span>)
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">c</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;body&gt;&lt;h3&gt;One&lt;/h3&gt;Hello&lt;h3&gt;Two&lt;/h3&gt;&lt;/body&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#map should not modify the argument&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;body&gt;&lt;h2&gt;One&lt;/h2&gt;Hello&lt;h2&gt;Two&lt;/h2&gt;&lt;/body&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#map should work&quot;</span>)
+        
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map</span>(<span class="ruby-identifier">:h3</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:h2</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">attrs</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">c</span>.<span class="ruby-identifier">contents</span>)
+        }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;body&gt;&lt;h2&gt;One&lt;/h2&gt;Hello&lt;h2&gt;Two&lt;/h2&gt;&lt;/body&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#map should accept selectors&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000066"></a><b>test_monadic</b>()
+  </div>
+  <div class="description">
+  <p>
+Test the &quot;monadic&quot; interface, that is constructors with
+instance_eval&#8216;d blocks passed to them: <a
+href="XML.html#M000026">XML.new</a>(:foo) { bar! } # -&gt;
+&lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000066_source')" id="l_M000066_source">show source</a> ]</p>
+  <div id="M000066_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 175</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_monadic</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>) { <span class="ruby-identifier">bar!</span>; <span class="ruby-identifier">xml!</span>(<span class="ruby-identifier">:xxx</span>) }
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">xml</span>(<span class="ruby-identifier">:div</span>) {
+            <span class="ruby-identifier">ul!</span> {
+                <span class="ruby-identifier">li!</span>(<span class="ruby-constant">XML</span>.<span class="ruby-identifier">a</span>(<span class="ruby-value str">&quot;Hello&quot;</span>))
+            }
+        }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar/&gt;&lt;xxx/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Monadic interface should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;Hello&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Monadic interface should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000100"></a><b>test_multielement_selectors</b>()
+  </div>
+  <div class="description">
+  <p>
+Test multielement selectors
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000100_source')" id="l_M000100_source">show source</a> ]</p>
+  <div id="M000100_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 791</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_multielement_selectors</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar color='blue'&gt;&lt;x/&gt;&lt;/bar&gt;&lt;bar color='red'&gt;&lt;x&gt;&lt;y i='1'/&gt;&lt;/x&gt;&lt;y i='2'/&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;x/&gt;&lt;x&gt;&lt;y i='1'/&gt;&lt;/x&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:x</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Multielement selectors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;y i='2'/&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:y</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Multielement selectors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;y i='1'/&gt;&lt;y i='2'/&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:*</span>, <span class="ruby-identifier">:y</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Multielement selectors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;y i='1'/&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:x</span>, <span class="ruby-identifier">:y</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Multielement selectors should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;y i='1'/&gt;&lt;y i='2'/&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-identifier">:*</span>, <span class="ruby-identifier">:y</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Multielement selectors should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000065"></a><b>test_normalize</b>()
+  </div>
+  <div class="description">
+  <p>
+Test XML#normalize! method
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000065_source')" id="l_M000065_source">show source</a> ]</p>
+  <div id="M000065_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 158</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_normalize</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;He&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-value str">&quot;llo&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;1&quot;</span>), <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;2&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>), <span class="ruby-value str">&quot;X&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-value str">&quot;3&quot;</span>), <span class="ruby-value str">&quot;&quot;</span>)
+
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">normalize!</span>
+        <span class="ruby-identifier">b</span>.<span class="ruby-identifier">normalize!</span>
+        <span class="ruby-identifier">c</span>.<span class="ruby-identifier">normalize!</span>
+
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-value str">&quot;Hello&quot;</span>], <span class="ruby-identifier">a</span>.<span class="ruby-identifier">contents</span>, <span class="ruby-value str">&quot;XML#normalize! should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([], <span class="ruby-identifier">b</span>.<span class="ruby-identifier">contents</span>, <span class="ruby-value str">&quot;XML#normalize! should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;1&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;2&quot;</span>), <span class="ruby-value str">&quot;X&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:bar</span>, <span class="ruby-value str">&quot;3&quot;</span>)], <span class="ruby-identifier">c</span>.<span class="ruby-identifier">contents</span>, <span class="ruby-value str">&quot;XML#normalize! should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000067"></a><b>test_parse</b>()
+  </div>
+  <div class="description">
+  <p>
+Test if parsing and printing gives the right results We test mostly
+round-trip
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000067_source')" id="l_M000067_source">show source</a> ]</p>
+  <div id="M000067_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 188</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo a='1'/&gt;&quot;</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-value str">&quot;&lt;foo&gt;Hello&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">d</span> = <span class="ruby-value str">&quot;&lt;foo a='1'&gt;&lt;bar b='2'&gt;Hello&lt;/bar&gt;&lt;bar b='3'&gt;world&lt;/bar&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">e</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&amp;gt; &amp;lt; &amp;amp;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">f</span> = <span class="ruby-value str">&quot;&lt;foo a='b&amp;amp;c'/&gt;&quot;</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">a</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">b</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">c</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">d</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">e</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">f</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">f</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal x for normalized x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000085"></a><b>test_parse_as_twigs</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000020">XML#parse_as_twigs</a> interface
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000085_source')" id="l_M000085_source">show source</a> ]</p>
+  <div id="M000085_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 471</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_as_twigs</span>
+        <span class="ruby-identifier">stream</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p/&gt;&lt;p&gt;&lt;bar/&gt;&lt;/p&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">results</span> = []
+        <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse_as_twigs</span>(<span class="ruby-identifier">stream</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">n</span>.<span class="ruby-identifier">complete!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+            <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">n</span>
+            <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        }
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p&gt;&lt;ul&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;br/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;p/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">5</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar/&gt;&quot;</span>, <span class="ruby-identifier">results</span>[<span class="ruby-value">6</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">7</span>, <span class="ruby-identifier">results</span>.<span class="ruby-identifier">size</span>, <span class="ruby-value str">&quot;XML.parse_as_twigs should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000069"></a><b>test_parse_extra_cdata</b>()
+  </div>
+  <div class="description">
+  <p>
+Test handling extra cruft Some things are best ignored or normalized
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000069_source')" id="l_M000069_source">show source</a> ]</p>
+  <div id="M000069_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 214</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_extra_cdata</span>
+        <span class="ruby-identifier">a</span>     = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;![CDATA[&lt;greeting&gt;Hello, world!&lt;/greeting&gt;]]&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">a_out</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&amp;lt;greeting&amp;gt;Hello, world!&amp;lt;/greeting&amp;gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">a_out</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal normalized x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000072"></a><b>test_parse_extra_comment</b>()
+  </div>
+  <div class="description">
+  <p>
+Test handling (=ignoring) DTDs
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000072_source')" id="l_M000072_source">show source</a> ]</p>
+  <div id="M000072_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 235</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_extra_comment</span>
+        <span class="ruby-identifier">c</span>     = <span class="ruby-value str">&quot;&lt;!-- this is a comment --&gt;&lt;greeting&gt;Hello,&lt;!-- another comment --&gt; world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">c_out</span> = <span class="ruby-value str">&quot;&lt;greeting&gt;Hello, world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c_out</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">c</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal normalized x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000071"></a><b>test_parse_extra_dtd</b>()
+  </div>
+  <div class="description">
+  <p>
+Test handling (=ignoring) DTDs
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000071_source')" id="l_M000071_source">show source</a> ]</p>
+  <div id="M000071_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 228</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_extra_dtd</span>
+        <span class="ruby-identifier">c</span>     = <span class="ruby-value str">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; ?&gt;&lt;!DOCTYPE greeting [&lt;!ELEMENT greeting (#PCDATA)&gt;]&gt;&lt;greeting&gt;Hello, world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">c_out</span> = <span class="ruby-value str">&quot;&lt;greeting&gt;Hello, world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c_out</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">c</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal normalized x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000068"></a><b>test_parse_extra_escapes</b>()
+  </div>
+  <div class="description">
+  <p>
+Test parsing &amp;-entities
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000068_source')" id="l_M000068_source">show source</a> ]</p>
+  <div id="M000068_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 205</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_extra_escapes</span>
+        <span class="ruby-identifier">a</span>     = <span class="ruby-value str">&quot;&lt;foo&gt;&amp;quot; &amp;apos;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">a_out</span> = <span class="ruby-value str">&quot;&lt;foo&gt;\&quot; '&lt;/foo&gt;&quot;</span>
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">a_out</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should normalize entities in x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000070"></a><b>test_parse_extra_qxml</b>()
+  </div>
+  <div class="description">
+  <p>
+Test handling (=ignoring) <a href="XML.html">XML</a> declarations
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000070_source')" id="l_M000070_source">show source</a> ]</p>
+  <div id="M000070_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 221</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_extra_qxml</span>
+        <span class="ruby-identifier">b</span>     = <span class="ruby-value str">&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;&lt;greeting&gt;Hello, world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">b_out</span> = <span class="ruby-value str">&quot;&lt;greeting&gt;Hello, world!&lt;/greeting&gt;&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">b_out</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse(x).to_s should equal normalized x&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000073"></a><b>test_parse_file</b>()
+  </div>
+  <div class="description">
+  <p>
+Test reading from a file
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000073_source')" id="l_M000073_source">show source</a> ]</p>
+  <div id="M000073_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 242</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parse_file</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">&quot;test.xml&quot;</span>).<span class="ruby-identifier">xml_parse</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">from_file</span>(<span class="ruby-value str">&quot;test.xml&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">from_url</span>(<span class="ruby-value str">&quot;file:test.xml&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">from_url</span>(<span class="ruby-value str">&quot;string:&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">f</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&quot;</span>.<span class="ruby-identifier">xml_parse</span>
+        <span class="ruby-identifier">g</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">foo</span> { <span class="ruby-identifier">bar!</span> }
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;File#xml_parse should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.from_file should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.from_url(\&quot;file:...\&quot;) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.from_url(\&quot;string:...\&quot;) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML.parse should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;String#xml_parse should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000098"></a><b>test_parsing_entities</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000022">XML.parse</a>(str, :extra_entities =&gt;
+&#8230;)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000098_source')" id="l_M000098_source">show source</a> ]</p>
+  <div id="M000098_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 752</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parsing_entities</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&amp;cat; &amp;amp; &amp;dog;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">:extra_entities</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">e</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;cat&quot;</span>
+                <span class="ruby-value str">&quot;neko&quot;</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;dog&quot;</span>
+                 <span class="ruby-value str">&quot;inu&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+        })
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">:extra_entities</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value str">&quot;cat&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;neko&quot;</span>, <span class="ruby-value str">&quot;dog&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;inu&quot;</span>})
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;neko &amp; inu&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#parse(str, :extra_entities=&gt;Proc) should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;neko &amp; inu&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#parse(str, :extra_entities=&gt;Hash) should work&quot;</span>)
+        
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">:extra_entities</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value str">&quot;cat&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;neko&quot;</span>, <span class="ruby-value str">&quot;dog&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;inu&quot;</span>})
+        
+        <span class="ruby-comment cmt"># Central European characters escapes</span>
+        <span class="ruby-identifier">e</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&amp;zdot;&amp;oacute;&amp;lstrok;w&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">f</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">:extra_entities</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value str">&quot;zdot&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">380</span>, <span class="ruby-value str">&quot;oacute&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">243</span>, <span class="ruby-value str">&quot;lstrok&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">322</span>})
+        
+        <span class="ruby-comment cmt"># Assumes \number does bytes, UTF8</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;\305\274\303\263\305\202w&quot;</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#parse(str, :extra_entities=&gt;...) should work with integer codepoints&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000096"></a><b>test_parsing_extras</b>()
+  </div>
+  <div class="description">
+  <p>
+Test extra arguments to <a href="XML.html#M000022">XML#parse</a> -
+:comments and :pi
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000096_source')" id="l_M000096_source">show source</a> ]</p>
+  <div id="M000096_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 714</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parsing_extras</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;?xml-stylesheet href='http://www.blogger.com/styles/atom.css' type='text/css'?&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;!-- This is a comment --&gt;&lt;/foo&gt;&quot;</span>
+        
+        <span class="ruby-identifier">ax</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>)
+        <span class="ruby-identifier">bx</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>)
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">ax</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse should drop PI by default&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">bx</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse should drop comments by default&quot;</span>)
+        
+        <span class="ruby-identifier">ay</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">:comments</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">:pi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+        <span class="ruby-identifier">by</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>, <span class="ruby-identifier">:comments</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">:pi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">ay</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse(str, :pi=&gt;true) should include PI&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">b</span>, <span class="ruby-identifier">by</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse(str, :comments=&gt;true) should include comments&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000097"></a><b>test_parsing_nopp</b>()
+  </div>
+  <div class="description">
+  <p>
+Test extra arguments to <a href="XML.html#M000022">XML#parse</a> -
+:remove_pretty_printing. FIXME: How about a shorter (but still mnemonic)
+name for that ?
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000097_source')" id="l_M000097_source">show source</a> ]</p>
+  <div id="M000097_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 733</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parsing_nopp</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;100&lt;/bar&gt;&lt;bar&gt;200&lt;/bar&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo&gt;
+               &lt;bar&gt;
+                 100
+               &lt;/bar&gt;
+               &lt;bar&gt;
+                 200
+               &lt;/bar&gt;
+             &lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>)
+        <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>, <span class="ruby-identifier">:remove_pretty_printing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+
+        <span class="ruby-identifier">assert_not_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse should not ignore pretty printing by default&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse(str, :remove_pretty_printing=&gt;true) should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000090"></a><b>test_patterns</b>()
+  </div>
+  <div class="description">
+  <p>
+Test patterns support
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000090_source')" id="l_M000090_source">show source</a> ]</p>
+  <div id="M000090_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 552</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_patterns</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;, &lt;bar color='red'&gt;world&lt;/bar&gt;&lt;excl&gt;!&lt;/excl&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">normalize!</span>
+        
+        <span class="ruby-identifier">blue</span>    = []
+        <span class="ruby-identifier">nocolor</span> = []
+        <span class="ruby-identifier">bar</span>     = []
+        <span class="ruby-comment cmt">#hello   = []</span>
+        
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:bar</span>
+                <span class="ruby-identifier">bar</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">when</span> {<span class="ruby-identifier">:color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'blue'</span>}
+                <span class="ruby-identifier">blue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+        
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">when</span> {<span class="ruby-identifier">:color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>}
+                <span class="ruby-identifier">nocolor</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+        
+            <span class="ruby-comment cmt">#case d</span>
+            <span class="ruby-comment cmt">#when /Hello/</span>
+            <span class="ruby-comment cmt">#    hello &lt;&lt; d</span>
+            <span class="ruby-comment cmt">#end</span>
+        }
+        
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;world&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">bar</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">blue</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;excl&gt;!&lt;/excl&gt;&quot;</span>)], <span class="ruby-identifier">nocolor</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-comment cmt"># Commented out, as it requires overloading Regexp#=~ and therefore Binding.of_caller</span>
+        <span class="ruby-comment cmt">#assert_equal([XML.parse(&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;), &quot;Hello&quot;], hello, &quot;Pattern matching should work&quot;)</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000091"></a><b>test_patterns_2</b>()
+  </div>
+  <div class="description">
+  <p>
+Test pattern support in descendants (works the same way in children)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000091_source')" id="l_M000091_source">show source</a> ]</p>
+  <div id="M000091_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 591</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_patterns_2</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;, &lt;bar color='red'&gt;world&lt;/bar&gt;&lt;excl color='blue'&gt;!&lt;/excl&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">normalize!</span>
+        
+        <span class="ruby-identifier">bar</span>      = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:bar</span>)
+        <span class="ruby-identifier">blue</span>     = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>({<span class="ruby-identifier">:color=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'blue'</span>})
+        <span class="ruby-identifier">blue_bar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">all</span>(<span class="ruby-identifier">:bar</span>, {<span class="ruby-identifier">:color=</span><span class="ruby-operator">&gt;</span><span class="ruby-value str">'blue'</span>}))
+        <span class="ruby-comment cmt">#hello    = a.descendants(/Hello/)</span>
+        <span class="ruby-identifier">xml</span>      = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-constant">XML</span>)
+        <span class="ruby-identifier">string</span>   = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-constant">String</span>)
+    
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;world&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">bar</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;excl color='blue'&gt;!&lt;/excl&gt;&quot;</span>)], <span class="ruby-identifier">blue</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">blue_bar</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-comment cmt"># Commented out, as it requires overloading Regexp#=~ and therefore Binding.of_caller</span>
+        <span class="ruby-comment cmt">#assert_equal([XML.parse(&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;), &quot;Hello&quot;], hello, &quot;Pattern matching should work&quot;)</span>
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;world&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;excl color='blue'&gt;!&lt;/excl&gt;&quot;</span>)], <span class="ruby-identifier">xml</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-value str">'Hello'</span>, <span class="ruby-value str">', '</span>, <span class="ruby-value str">'world'</span>, <span class="ruby-value str">'!'</span>], <span class="ruby-identifier">string</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000092"></a><b>test_patterns_3</b>()
+  </div>
+  <div class="description">
+  <p>
+Test patterns =~ support
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000092_source')" id="l_M000092_source">show source</a> ]</p>
+  <div id="M000092_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 612</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_patterns_3</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;, &lt;bar color='red'&gt;world&lt;/bar&gt;&lt;excl&gt;!&lt;/excl&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">normalize!</span>
+        
+        <span class="ruby-identifier">blue</span>    = []
+        <span class="ruby-identifier">nocolor</span> = []
+        <span class="ruby-identifier">bar</span>     = []
+        <span class="ruby-identifier">hello</span>   = []
+        
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">:bar</span>
+                <span class="ruby-identifier">bar</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">=~</span> {<span class="ruby-identifier">:color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'blue'</span>}
+                <span class="ruby-identifier">blue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+        
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">=~</span> {<span class="ruby-identifier">:color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>}
+                <span class="ruby-identifier">nocolor</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+        
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/Hello/</span>
+                <span class="ruby-identifier">hello</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;world&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">bar</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>)], <span class="ruby-identifier">blue</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;excl&gt;!&lt;/excl&gt;&quot;</span>)], <span class="ruby-identifier">nocolor</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>([<span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;bar color='blue'&gt;Hello&lt;/bar&gt;&quot;</span>), <span class="ruby-value str">&quot;Hello&quot;</span>], <span class="ruby-identifier">hello</span>, <span class="ruby-value str">&quot;Pattern matching should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000093"></a><b>test_patterns_any_all</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000093_source')" id="l_M000093_source">show source</a> ]</p>
+  <div id="M000093_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 645</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_patterns_any_all</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;
+        &lt;bar color='blue' size='big'&gt;1&lt;/bar&gt;
+        &lt;bar color='blue'&gt;2&lt;/bar&gt;
+        &lt;bar color='blue' size='normal'&gt;3&lt;/bar&gt;
+        &lt;bar color='red' size='big'&gt;4&lt;/bar&gt;
+        &lt;bar color='red'&gt;5&lt;/bar&gt;
+        &lt;bar color='red' size='normal'&gt;6&lt;/bar&gt;
+        &lt;/foo&gt;&quot;</span>
+        
+        <span class="ruby-identifier">p</span> = <span class="ruby-identifier">all</span>({<span class="ruby-identifier">:color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'red'</span>}, <span class="ruby-identifier">any</span>({<span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>}, {<span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'normal'</span>}))
+        <span class="ruby-comment cmt"># Select childern which color red and size either normal or not specified</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">p</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">p</span> }
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span> }
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;5&lt;/bar&gt;&lt;bar color='red' size='normal'&gt;6&lt;/bar&gt;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Pattern matching with any/all should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;5&lt;/bar&gt;&lt;bar color='red' size='normal'&gt;6&lt;/bar&gt;&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Pattern matching with any/all should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar color='red'&gt;5&lt;/bar&gt;&lt;bar color='red' size='normal'&gt;6&lt;/bar&gt;&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;Pattern matching with any/all should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000102"></a><b>test_pretty_printer</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000019">XML.load</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000102_source')" id="l_M000102_source">show source</a> ]</p>
+  <div id="M000102_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 812</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_pretty_printer</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;x&lt;/bar&gt;Boo!&lt;bar&gt;&lt;y&gt;&lt;z&gt;f&lt;/z&gt;&lt;/y&gt;&lt;/bar&gt;&lt;xyzzy /&gt;&lt;bar&gt;Mutiline\nText\n:-)&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">add_pretty_printing!</span>
+        <span class="ruby-identifier">expected</span> = <span class="ruby-value str">&quot;&lt;foo&gt;
+  &lt;bar&gt;
+    x
+  &lt;/bar&gt;
+  Boo!
+  &lt;bar&gt;
+    &lt;y&gt;
+      &lt;z&gt;
+        f
+      &lt;/z&gt;
+    &lt;/y&gt;
+  &lt;/bar&gt;
+  &lt;xyzzy/&gt;
+  &lt;bar&gt;
+    Mutiline
+    Text
+    :-)
+  &lt;/bar&gt;
+&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#pretty_print! should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000087"></a><b>test_pseudoattributes_read</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html">XML</a>#[:@foo] pseudoattributes
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000087_source')" id="l_M000087_source">show source</a> ]</p>
+  <div id="M000087_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 506</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_pseudoattributes_read</span>
+        <span class="ruby-comment cmt"># Ignore the second &lt;x&gt;...&lt;/x&gt;</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo x='10'&gt;&lt;x&gt;20&lt;/x&gt;&lt;y&gt;30&lt;/y&gt;&lt;x&gt;40&lt;/x&gt;&lt;/foo&gt;&quot;</span>)
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;10&quot;</span>, <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:x</span>],  <span class="ruby-value str">&quot;XML#[] real attributes should work&quot;</span>)
+        <span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">a</span>[<span class="ruby-identifier">:y</span>],  <span class="ruby-value str">&quot;XML#[] real attributes should work&quot;</span>)
+        <span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">a</span>[<span class="ruby-identifier">:z</span>],  <span class="ruby-value str">&quot;XML#[] real attributes should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;20&quot;</span>, <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@x</span>], <span class="ruby-value str">&quot;XML#[] pseudoattributes should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;30&quot;</span>, <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@y</span>], <span class="ruby-value str">&quot;XML#[] pseudoattributes should work&quot;</span>)
+        <span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@z</span>], <span class="ruby-value str">&quot;XML#[] pseudoattributes should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000088"></a><b>test_pseudoattributes_write</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html">XML</a>#[:@foo] pseudoattributes
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000088_source')" id="l_M000088_source">show source</a> ]</p>
+  <div id="M000088_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 519</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_pseudoattributes_write</span>
+        <span class="ruby-comment cmt"># Ignore the second &lt;x&gt;...&lt;/x&gt;</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo x='10'&gt;&lt;x&gt;20&lt;/x&gt;&lt;y&gt;30&lt;/y&gt;&lt;x&gt;40&lt;/x&gt;&lt;/foo&gt;&quot;</span>)
+        
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:x</span>] = <span class="ruby-value">100</span>
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:y</span>] = <span class="ruby-value">200</span>
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:z</span>] = <span class="ruby-value">300</span>
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@x</span>] = <span class="ruby-value">1000</span>
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@y</span>] = <span class="ruby-value">2000</span>
+        <span class="ruby-identifier">a</span>[<span class="ruby-identifier">:@z</span>] = <span class="ruby-value">3000</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo x='100' y='200' z='300'&gt;&lt;x&gt;1000&lt;/x&gt;&lt;y&gt;2000&lt;/y&gt;&lt;x&gt;40&lt;/x&gt;&lt;z&gt;3000&lt;/z&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#[]= pseudoattributes should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000081"></a><b>test_range</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000035">XML#range</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000081_source')" id="l_M000081_source">show source</a> ]</p>
+  <div id="M000081_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 347</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_range</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>)
+        
+        <span class="ruby-comment cmt"># Non-recursive case</span>
+        <span class="ruby-identifier">ar_n_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_0_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_1_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_4_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">4</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_n_4</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">4</span>])
+        <span class="ruby-identifier">ar_n_3</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">3</span>])
+        <span class="ruby-identifier">ar_n_0</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>])
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_0_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_1_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">ar_4_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_4</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_3</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">ar_n_0</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#range should work&quot;</span>)
+        
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;a&gt;
+                       &lt;b i='0'&gt;&lt;c i='0'/&gt;&lt;c i='1'/&gt;&lt;c i='2'/&gt;&lt;/b&gt;
+                       &lt;b i='1'&gt;&lt;c i='3'/&gt;&lt;c i='4'/&gt;&lt;c i='5'/&gt;&lt;/b&gt;
+                       &lt;b i='2'&gt;&lt;c i='6'/&gt;&lt;c i='7'/&gt;&lt;c i='8'/&gt;&lt;/b&gt;
+                       &lt;/a&gt;&quot;</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:c</span>)
+       
+        <span class="ruby-identifier">c</span>.<span class="ruby-identifier">each_with_index</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">ci</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">c</span>.<span class="ruby-identifier">each_with_index</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">cj</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">j</span>
+                <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">ci</span>,<span class="ruby-identifier">cj</span>)
+                <span class="ruby-identifier">cs_present</span> = <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:c</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span><span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+                <span class="ruby-identifier">assert_equal</span>(((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">...</span><span class="ruby-identifier">j</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#range(c#{i}, c#{j}) should contain cs between #{i} and #{j}, exclusive, instead got: #{ar}&quot;</span>)
+            }
+            <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">ci</span>,<span class="ruby-keyword kw">nil</span>)
+            <span class="ruby-identifier">cs_present</span> = <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:c</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span><span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+            <span class="ruby-identifier">assert_equal</span>(((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">..</span><span class="ruby-value">8</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#range(c#{i}, nil) should contain cs from #{i+1} to 8, instead got: #{ar}&quot;</span>)
+            
+            <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>,<span class="ruby-identifier">ci</span>)
+            <span class="ruby-identifier">cs_present</span> = <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:c</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span><span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+            <span class="ruby-identifier">assert_equal</span>((<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#range(nil, c#{i}) should contain cs from 0 to #{i-1}, instead got: #{ar}&quot;</span>)
+        }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000084"></a><b>test_real_method_missing</b>()
+  </div>
+  <div class="description">
+  <p>
+Methods XML#foo! are all catched, but how about other methods ?
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000084_source')" id="l_M000084_source">show source</a> ]</p>
+  <div id="M000084_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 458</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_real_method_missing</span>
+        <span class="ruby-identifier">foo</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:foo</span>)
+        <span class="ruby-identifier">exception_raised</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">begin</span> 
+            <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">bar</span>()
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NoMethodError</span>
+            <span class="ruby-identifier">exception_raised</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># FIXME: There are other assertions than assert_equal ;-)</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">exception_raised</span>, <span class="ruby-value str">&quot;XML#bar should raise NoMethodError&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000094"></a><b>test_remove_pretty_printing</b>()
+  </div>
+  <div class="description">
+  <p>
+Test parse option :ignore_pretty_printing
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000094_source')" id="l_M000094_source">show source</a> ]</p>
+  <div id="M000094_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 667</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_remove_pretty_printing</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;100&lt;/bar&gt;&lt;bar&gt;200&lt;/bar&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo&gt;
+               &lt;bar&gt;
+                 100
+               &lt;/bar&gt;
+               &lt;bar&gt;
+                 200
+               &lt;/bar&gt;
+             &lt;/foo&gt;&quot;</span>
+         <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>)
+         <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>)
+         <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>)
+         <span class="ruby-identifier">e</span>.<span class="ruby-identifier">remove_pretty_printing!</span>
+         
+         <span class="ruby-identifier">assert_not_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#parse should not ignore pretty printing by default&quot;</span>)
+         <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#remove_pretty_printing! should work&quot;</span>)
+         
+         <span class="ruby-identifier">f</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt; &lt;bar&gt;Hello    world&lt;/bar&gt; &lt;/foo&gt;&quot;</span>)
+         <span class="ruby-identifier">f</span>.<span class="ruby-identifier">remove_pretty_printing!</span>
+         <span class="ruby-identifier">g</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;Hello world&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+         <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#remove_pretty_printing! should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000095"></a><b>test_remove_pretty_printing_conditional</b>()
+  </div>
+  <div class="description">
+  <p>
+Test remove_pretty_printing! with exception list
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000095_source')" id="l_M000095_source">show source</a> ]</p>
+  <div id="M000095_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 692</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_remove_pretty_printing_conditional</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;
+               &lt;pre&gt;
+                 &lt;a&gt; 100 &lt;/a&gt;
+               &lt;/pre&gt;
+               &lt;xyzzy&gt;
+                 &lt;a&gt; 200 &lt;/a&gt;
+               &lt;/xyzzy&gt;
+             &lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;pre&gt;
+                 &lt;a&gt; 100 &lt;/a&gt;
+               &lt;/pre&gt;&lt;xyzzy&gt;&lt;a&gt;200&lt;/a&gt;&lt;/xyzzy&gt;&lt;/foo&gt;&quot;</span>
+
+        <span class="ruby-identifier">ax</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">a</span>)
+        <span class="ruby-identifier">bx</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">b</span>)
+        
+        <span class="ruby-identifier">ax</span>.<span class="ruby-identifier">remove_pretty_printing!</span>([<span class="ruby-identifier">:pre</span>])
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">bx</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">ax</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#remove_pretty_printing!(exceptions) should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000080"></a><b>test_renormalize</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000024">XML#renormalize</a> and <a
+href="XML.html#M000025">XML#renormalize_sequence</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000080_source')" id="l_M000080_source">show source</a> ]</p>
+  <div id="M000080_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 337</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_renormalize</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&lt;foo&gt;&lt;/foo&gt;&lt;bar&gt;&lt;/bar&gt;&quot;</span>
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">renormalize</span>(<span class="ruby-identifier">a</span>), <span class="ruby-value str">&quot;XML#renormalize should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">renormalize_sequence</span>(<span class="ruby-identifier">a</span>), <span class="ruby-value str">&quot;XML#renormalize_sequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&lt;bar/&gt;&quot;</span>, <span class="ruby-constant">XML</span>.<span class="ruby-identifier">renormalize_sequence</span>(<span class="ruby-identifier">b</span>), <span class="ruby-value str">&quot;XML#renormalize_sequence should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000058"></a><b>test_sort_by</b>()
+  </div>
+  <div class="description">
+  <p>
+Test sort_by and children_sort_by
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000058_source')" id="l_M000058_source">show source</a> ]</p>
+  <div id="M000058_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 32</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_sort_by</span>
+        <span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar id='5'/&gt;a&lt;bar id='3'/&gt;c&lt;bar id='4'/&gt;b&lt;bar id='1'/&gt;&lt;/foo&gt;&quot;</span>)
+        
+        <span class="ruby-identifier">doc_by_id</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>[<span class="ruby-identifier">:id</span>]}
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar id='1'/&gt;&lt;bar id='3'/&gt;&lt;bar id='4'/&gt;&lt;bar id='5'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">doc_by_id</span>.<span class="ruby-identifier">to_s</span>)
+
+        <span class="ruby-identifier">doc_all_by_id</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">children_sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span> <span class="ruby-keyword kw">then</span> [<span class="ruby-value">0</span>, <span class="ruby-identifier">c</span>[<span class="ruby-identifier">:id</span>]] <span class="ruby-keyword kw">else</span> [<span class="ruby-value">1</span>, <span class="ruby-identifier">c</span>] <span class="ruby-keyword kw">end</span>}
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar id='1'/&gt;&lt;bar id='3'/&gt;&lt;bar id='4'/&gt;&lt;bar id='5'/&gt;abc&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">doc_all_by_id</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000082"></a><b>test_subsequence</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000036">XML#subsequence</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000082_source')" id="l_M000082_source">show source</a> ]</p>
+  <div id="M000082_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 393</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_subsequence</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">:bar</span>)
+        
+        <span class="ruby-comment cmt"># Non-recursive case</span>
+        <span class="ruby-identifier">ar_n_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_0_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_1_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">1</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_4_n</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">b</span>[<span class="ruby-value">4</span>], <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">ar_n_4</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">4</span>])
+        <span class="ruby-identifier">ar_n_3</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">3</span>])
+        <span class="ruby-identifier">ar_n_0</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>])
+        
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&quot;</span>, <span class="ruby-identifier">ar_0_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;bar i='4'/&gt;&quot;</span>, <span class="ruby-identifier">ar_1_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">ar_4_n</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;bar i='3'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_4</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar i='0'/&gt;&lt;bar i='1'/&gt;&lt;bar i='2'/&gt;&lt;/foo&gt;&quot;</span>, <span class="ruby-identifier">ar_n_3</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">ar_n_0</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value str">&quot;XML#subsequence should work&quot;</span>)
+        
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value str">&quot;&lt;a&gt;
+                       &lt;b j='0'&gt;&lt;c i='0'/&gt;&lt;c i='1'/&gt;&lt;c i='2'/&gt;&lt;/b&gt;
+                       &lt;b j='1'&gt;&lt;c i='3'/&gt;&lt;c i='4'/&gt;&lt;c i='5'/&gt;&lt;/b&gt;
+                       &lt;b j='2'&gt;&lt;c i='6'/&gt;&lt;c i='7'/&gt;&lt;c i='8'/&gt;&lt;/b&gt;
+                       &lt;/a&gt;&quot;</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">:c</span>)
+       
+        <span class="ruby-comment cmt"># (ar + ar.descendants).find_all{|x| x.is_a? XML and x.name == :c}</span>
+        <span class="ruby-comment cmt"># instead of ar.descendants(:c) because </span>
+        <span class="ruby-comment cmt"># we might have returned [&lt;c i='?'/&gt;] as a result,</span>
+        <span class="ruby-comment cmt"># and then it's not a descendant of the result then.</span>
+        <span class="ruby-comment cmt"># This is ugly, and it should be fixed somewhere in magic/xml</span>
+        <span class="ruby-identifier">c</span>.<span class="ruby-identifier">each_with_index</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">ci</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">c</span>.<span class="ruby-identifier">each_with_index</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">cj</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">j</span>
+                <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">ci</span>,<span class="ruby-identifier">cj</span>)
+                <span class="ruby-identifier">cs_present</span> = (<span class="ruby-identifier">ar</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>).<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:c</span>}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+                <span class="ruby-identifier">assert_equal</span>(((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">...</span><span class="ruby-identifier">j</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#subsequence(c#{i}, c#{j}) should contain cs between #{i} and #{j}, exclusive, instead got: #{ar}&quot;</span>)
+            }
+            <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">ci</span>,<span class="ruby-keyword kw">nil</span>)
+            <span class="ruby-identifier">cs_present</span> = (<span class="ruby-identifier">ar</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>).<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:c</span>}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+            <span class="ruby-identifier">assert_equal</span>(((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">..</span><span class="ruby-value">8</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#subsequence(c#{i}, nil) should contain cs from #{i+1} to 8, instead got: #{ar}&quot;</span>)
+            
+            <span class="ruby-identifier">ar</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>,<span class="ruby-identifier">ci</span>)
+            <span class="ruby-identifier">cs_present</span> = (<span class="ruby-identifier">ar</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ar</span>.<span class="ruby-identifier">descendants</span>).<span class="ruby-identifier">find_all</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:c</span>}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>[<span class="ruby-identifier">:i</span>].<span class="ruby-identifier">to_i</span>}
+            <span class="ruby-identifier">assert_equal</span>((<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span>).<span class="ruby-identifier">to_a</span>, <span class="ruby-identifier">cs_present</span>, <span class="ruby-node">&quot;XML#subsequence(nil, c#{i}) should contain cs from 0 to #{i-1}, instead got: #{ar}&quot;</span>)
+        }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000079"></a><b>test_text</b>()
+  </div>
+  <div class="description">
+  <p>
+Test <a href="XML.html#M000047">XML#text</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000079_source')" id="l_M000079_source">show source</a> ]</p>
+  <div id="M000079_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 324</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_text</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;Hello&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">c</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;&lt;bar&gt;Hello&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+        <span class="ruby-identifier">d</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value str">&quot;&lt;foo&gt;He&lt;bar&gt;llo&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)
+
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#text should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#text should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#text should work&quot;</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;Hello&quot;</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">text</span>, <span class="ruby-value str">&quot;XML#text should work&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000083"></a><b>test_xml_bang</b>()
+  </div>
+  <div class="description">
+  <p>
+Test xml! at top level
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000083_source')" id="l_M000083_source">show source</a> ]</p>
+  <div id="M000083_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File tests.rb, line 444</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_xml_bang</span>
+        <span class="ruby-identifier">real_stdout</span> = <span class="ruby-identifier">$stdout</span>
+        <span class="ruby-identifier">$stdout</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">xml!</span>(<span class="ruby-identifier">:foo</span>)
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;foo/&gt;&quot;</span>, <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">string</span>, <span class="ruby-value str">&quot;xml! should work&quot;</span>)
+        
+        <span class="ruby-identifier">$stdout</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-constant">XML</span>.<span class="ruby-identifier">bar!</span>
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;&lt;bar/&gt;&quot;</span>, <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">string</span>, <span class="ruby-value str">&quot;XML#foo! should work&quot;</span>)
+        <span class="ruby-identifier">$stdout</span> = <span class="ruby-identifier">real_stdout</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

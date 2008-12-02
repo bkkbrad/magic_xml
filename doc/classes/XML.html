@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: XML</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />XML</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/magic_xml_rb.html">magic_xml.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Object
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+Instance methods (other than those of Enumerable)
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000031">&lt;&lt;</a></li>
+  <li><a href="#M000032">==</a></li>
+  <li><a href="#M000037">=~</a></li>
+  <li><a href="#M000029">[]</a></li>
+  <li><a href="#M000030">[]=</a></li>
+  <li><a href="#M000045">add!</a></li>
+  <li><a href="#M000040">add_pretty_printing!</a></li>
+  <li><a href="#M000048">child</a></li>
+  <li><a href="#M000050">children</a></li>
+  <li><a href="#M000014">children_sort_by</a></li>
+  <li><a href="#M000052">deep_map</a></li>
+  <li><a href="#M000049">descendant</a></li>
+  <li><a href="#M000051">descendants</a></li>
+  <li><a href="#M000042">dup</a></li>
+  <li><a href="#M000012">each</a></li>
+  <li><a href="#M000034">exec!</a></li>
+  <li><a href="#M000017">from_file</a></li>
+  <li><a href="#M000018">from_url</a></li>
+  <li><a href="#M000028">inspect</a></li>
+  <li><a href="#M000019">load</a></li>
+  <li><a href="#M000053">map</a></li>
+  <li><a href="#M000033">method_missing</a></li>
+  <li><a href="#M000016">method_missing</a></li>
+  <li><a href="#M000026">new</a></li>
+  <li><a href="#M000046">normalize!</a></li>
+  <li><a href="#M000022">parse</a></li>
+  <li><a href="#M000020">parse_as_twigs</a></li>
+  <li><a href="#M000023">parse_sequence</a></li>
+  <li><a href="#M000021">parse_subtree</a></li>
+  <li><a href="#M000035">range</a></li>
+  <li><a href="#M000041">real_add_pretty_printing!</a></li>
+  <li><a href="#M000039">real_remove_pretty_printing!</a></li>
+  <li><a href="#M000038">remove_pretty_printing!</a></li>
+  <li><a href="#M000024">renormalize</a></li>
+  <li><a href="#M000025">renormalize_sequence</a></li>
+  <li><a href="#M000015">sort</a></li>
+  <li><a href="#M000013">sort_by</a></li>
+  <li><a href="#M000036">subsequence</a></li>
+  <li><a href="#M000047">text</a></li>
+  <li><a href="#M000043">text!</a></li>
+  <li><a href="#M000027">to_s</a></li>
+  <li><a href="#M000044">xml!</a></li>
+  </ul>
+
+<div class="sectiontitle">Included Modules</div>
+<ul>
+  <li>Enumerable</li>
+</ul>
+
+
+
+
+  <div class="sectiontitle">Attributes</div>
+  <table border='0' cellpadding='5'>
+  <tr valign='top'>
+    <td class='attr-rw'>
+[RW]
+    </td>
+    <td class='attr-name'>attrs</td>
+    <td class='attr-desc'></td>
+  </tr>
+  <tr valign='top'>
+    <td class='attr-rw'>
+[RW]
+    </td>
+    <td class='attr-name'>contents</td>
+    <td class='attr-desc'></td>
+  </tr>
+  <tr valign='top'>
+    <td class='attr-rw'>
+[RW]
+    </td>
+    <td class='attr-name'>name</td>
+    <td class='attr-desc'></td>
+  </tr>
+  </table>
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000017"></a><b>from_file</b>(file)
+  </div>
+  <div class="description">
+  <p>
+Read file and <a href="XML.html#M000022">parse</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000017_source')" id="l_M000017_source">show source</a> ]</p>
+  <div id="M000017_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 442</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_file</span>(<span class="ruby-identifier">file</span>)
+        <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+        <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">file</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000018"></a><b>from_url</b>(url)
+  </div>
+  <div class="description">
+  <p>
+Fetch URL and <a href="XML.html#M000022">parse</a> Supported:
+http://&#8230;/ https://&#8230;/ file:foo.xml string:&lt;foo/&gt;
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show source</a> ]</p>
+  <div id="M000018_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 453</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_url</span>(<span class="ruby-identifier">url</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^string:(.*)$/</span><span class="ruby-identifier">m</span>
+            <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">$1</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^file:(.*)$/</span><span class="ruby-identifier">m</span>
+            <span class="ruby-identifier">from_file</span>(<span class="ruby-identifier">$1</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^http(s?):/</span>
+            <span class="ruby-identifier">ssl</span> = (<span class="ruby-identifier">$1</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;s&quot;</span>)
+            <span class="ruby-comment cmt"># No, seriously - Ruby needs something better than net/http</span>
+            <span class="ruby-comment cmt"># Something that groks basic auth and queries and redirects automatically:</span>
+            <span class="ruby-comment cmt"># HTTP_LIBRARY.get_content(&quot;http://username:passwd/u.r.l/?query&quot;)</span>
+            <span class="ruby-comment cmt"># URI parsing must go inside the library, client programs</span>
+            <span class="ruby-comment cmt"># should have nothing to do with it</span>
+
+            <span class="ruby-comment cmt"># net/http is really inconvenient to use here</span>
+            <span class="ruby-identifier">u</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">url</span>)
+            <span class="ruby-comment cmt"># You're not seeing this:</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">query</span> <span class="ruby-keyword kw">then</span>
+                <span class="ruby-identifier">path</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;?&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">query</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">path</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">path</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">req</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Get</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">userinfo</span>
+                <span class="ruby-identifier">username</span>, <span class="ruby-identifier">passwd</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">userinfo</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/:/</span>,<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">req</span>.<span class="ruby-identifier">basic_auth</span> <span class="ruby-identifier">username</span>, <span class="ruby-identifier">passwd</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ssl</span>
+                <span class="ruby-comment cmt"># NOTE: You need libopenssl-ruby installed</span>
+                <span class="ruby-comment cmt"># if you want to use HTTPS. Ubuntu is broken</span>
+                <span class="ruby-comment cmt"># as it doesn't provide it in the default packages.</span>
+                <span class="ruby-identifier">require</span> <span class="ruby-value str">'net/https'</span>
+                <span class="ruby-identifier">http</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">u</span>.<span class="ruby-identifier">host</span>, <span class="ruby-identifier">u</span>.<span class="ruby-identifier">port</span>)
+                <span class="ruby-identifier">http</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
+                <span class="ruby-identifier">http</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">http</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">u</span>.<span class="ruby-identifier">host</span>, <span class="ruby-identifier">u</span>.<span class="ruby-identifier">port</span>)
+            <span class="ruby-keyword kw">end</span>
+            
+            <span class="ruby-identifier">res</span> = <span class="ruby-identifier">http</span>.<span class="ruby-identifier">start</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">req</span>) }
+            <span class="ruby-comment cmt"># TODO: Throw a more meaningful exception</span>
+            <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">res</span>.<span class="ruby-identifier">body</span>)
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;URL protocol #{url} not supported (http, https, file, string are supported)&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000019"></a><b>load</b>(obj)
+  </div>
+  <div class="description">
+  <p>
+Like CDuce load_xml The path can be:
+</p>
+<ul>
+<li>file handler
+
+</li>
+<li>URL (a string with :)
+
+</li>
+<li>file name (a string without :)
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show source</a> ]</p>
+  <div id="M000019_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 504</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">obj</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">&quot;:&quot;</span>
+                <span class="ruby-identifier">from_url</span>(<span class="ruby-identifier">obj</span>)
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">from_file</span>(<span class="ruby-identifier">obj</span>)
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">obj</span>)
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000016"></a><b>method_missing</b>(meth, *args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+XML.foo! == <a href="XML.html#M000044">xml!</a>(:foo) XML.foo == xml(:foo)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000016_source')" id="l_M000016_source">show source</a> ]</p>
+  <div id="M000016_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 433</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) 
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(.*)!$/</span>
+            <span class="ruby-identifier">xml!</span>(<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000026"></a><b>new</b>(*args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+initialize can be run in many ways
+</p>
+<ul>
+<li><a href="XML.html#M000026">XML.new</a>
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol)
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, {attributes})
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, &quot;<a
+href="XML.html#M000050">children</a>&quot;, &quot;more&quot;, <a
+href="XML.html#M000026">XML.new(...)</a>)
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, {attributes},
+&quot;and&quot;, &quot;<a href="XML.html#M000050">children</a>&quot;)
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol) { monadic code }
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, {attributes}) { monadic
+code }
+
+</li>
+</ul>
+<p>
+Or even:
+</p>
+<ul>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, &quot;<a
+href="XML.html#M000050">children</a>&quot;) { and some monadic code }
+
+</li>
+<li><a href="XML.html#M000026">XML.new</a>(:tag_symbol, {attributes}, &quot;<a
+href="XML.html#M000050">children</a>&quot;) { and some monadic code }
+
+</li>
+</ul>
+<p>
+But typically you won&#8216;t be mixing these two style
+</p>
+<p>
+Attribute values can will be converted to strings
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000026_source')" id="l_M000026_source">show source</a> ]</p>
+  <div id="M000026_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 773</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-ivar">@name</span>     = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-ivar">@attrs</span>    = {}
+        <span class="ruby-ivar">@contents</span> = []
+        <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+            <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+                <span class="ruby-comment cmt"># Do automatic conversion here</span>
+                <span class="ruby-comment cmt"># This also assures that the hashes are *not* shared</span>
+                <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+            }
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt"># Expand Arrays passed as arguments</span>
+        <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">args</span>
+        <span class="ruby-comment cmt"># FIXME: We'd rather not have people say @name = :foo there :-)</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">blk</span>
+            <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000022"></a><b>parse</b>(stream, options={})
+  </div>
+  <div class="description">
+  <p>
+Parse <a href="XML.html">XML</a> using REXML. Available options:
+</p>
+<ul>
+<li>:extra_entities =&gt; Proc or <a href="Hash.html">Hash</a> (default = nil)
+
+</li>
+<li>:remove_pretty_printing =&gt; true/false (default = false)
+
+</li>
+<li>:comments =&gt; true/false (default = false)
+
+</li>
+<li>:pi =&gt; true/false (default = false)
+
+</li>
+<li>:normalize =&gt; true/false (default = false) - normalize
+
+</li>
+<li>:multiple_roots =&gt; true/false (default=false) - document
+
+<pre>
+   can have any number of roots (instread of one).
+   Return all in an array instead of root/nil.
+   Also include non-elements (String/PI/Comment) in the return set !!!
+</pre>
+</li>
+</ul>
+<p>
+FIXME: :comments/:pi will break everything if there are comments/PIs
+outside document root. Now PIs are outside the document root more often
+than not, so we&#8216;re pretty much screwed here.
+</p>
+<p>
+FIXME: Integrate all kinds of <a href="XML.html#M000022">parse</a>, and
+make them support extra options
+</p>
+<p>
+FIXME: Benchmark <a href="XML.html#M000046">normalize!</a>
+</p>
+<p>
+FIXME: Benchmark <a href="XML.html#M000042">dup</a>-based Enumerable
+methods
+</p>
+<p>
+FIXME: Make it possible to include bogus XML_Document superparent,
+</p>
+<pre>
+       and to make it support out-of-root PIs/Comments
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000022_source')" id="l_M000022_source">show source</a> ]</p>
+  <div id="M000022_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 655</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">stream</span>, <span class="ruby-identifier">options</span>={})
+        <span class="ruby-identifier">extra_entities</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:extra_entities</span>]
+
+        <span class="ruby-identifier">parser</span> = <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parsers</span><span class="ruby-operator">::</span><span class="ruby-constant">BaseParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">stream</span>
+        <span class="ruby-identifier">stack</span> = [[]]
+        
+        <span class="ruby-keyword kw">while</span> <span class="ruby-keyword kw">true</span>
+            <span class="ruby-identifier">event</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">pull</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:start_element</span>
+                <span class="ruby-identifier">attrs</span> = {}
+                <span class="ruby-identifier">event</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">attrs</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">xml_unescape</span>(<span class="ruby-identifier">extra_entities</span>) }
+                <span class="ruby-identifier">stack</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attrs</span>, <span class="ruby-identifier">event</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+                <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>]
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_element</span>
+                <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">pop</span>
+            <span class="ruby-comment cmt"># Needs unescaping</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:text</span>
+                 <span class="ruby-identifier">e</span> = <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">xml_unescape</span>(<span class="ruby-identifier">extra_entities</span>)
+                 <span class="ruby-comment cmt"># Either inside root or in multi-root mode</span>
+                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:multiple_roots</span>]
+                     <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>
+                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/\S/</span>
+                     <span class="ruby-comment cmt"># Ignore out-of-root whitespace in single-root mode</span>
+                 <span class="ruby-keyword kw">else</span>
+                     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Non-whitespace text out of document root (and not in multiroot mode): #{event[1]}&quot;</span>
+                 <span class="ruby-keyword kw">end</span>
+            <span class="ruby-comment cmt"># CDATA is already unescaped</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:cdata</span>
+                <span class="ruby-identifier">e</span> = <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>]
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:multiple_roots</span>]
+                    <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;CDATA out of the document root&quot;</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:comment</span>
+                <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:comments</span>]
+                <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML_Comment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>])
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:multiple_roots</span>]
+                    <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-comment cmt"># FIXME: Ugly !</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Comments out of the document root&quot;</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:processing_instruction</span>
+                <span class="ruby-comment cmt"># FIXME: Real PI node</span>
+                <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:pi</span>]
+                <span class="ruby-identifier">e</span> = <span class="ruby-constant">XML_PI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">event</span>[<span class="ruby-value">2</span>])
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:multiple_roots</span>]
+                    <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-comment cmt"># FIXME: Ugly !</span>
+                    <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Processing instruction out of the document root&quot;</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_document</span>
+                <span class="ruby-keyword kw">break</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:xmldecl</span>,<span class="ruby-identifier">:start_doctype</span>,<span class="ruby-identifier">:end_doctype</span>,<span class="ruby-identifier">:elementdecl</span>
+                <span class="ruby-comment cmt"># Positivery ignore</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:externalentity</span>,<span class="ruby-identifier">:entity</span>,<span class="ruby-identifier">:attlistdecl</span>,<span class="ruby-identifier">:notationdecl</span>
+                <span class="ruby-comment cmt"># Ignore ???</span>
+                <span class="ruby-comment cmt">#print &quot;Ignored XML event #{event[0]} when parsing\n&quot;</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># Huh ? What's that ?</span>
+                <span class="ruby-comment cmt">#print &quot;Unknown XML event #{event[0]} when parsing\n&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">roots</span> = <span class="ruby-identifier">stack</span>[<span class="ruby-value">0</span>]
+        
+        <span class="ruby-identifier">roots</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">root</span><span class="ruby-operator">|</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">remove_pretty_printing!</span>} <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:remove_pretty_printing</span>]
+        <span class="ruby-comment cmt"># :remove_pretty_printing does :normalize anyway</span>
+        <span class="ruby-identifier">roots</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">root</span><span class="ruby-operator">|</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">normalize!</span>} <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:normalize</span>]
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:multiple_roots</span>]
+            <span class="ruby-identifier">roots</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">roots</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000020"></a><b>parse_as_twigs</b>(stream) {|node| ...}
+  </div>
+  <div class="description">
+  <p>
+Parse <a href="XML.html">XML</a> in mixed stream/tree mode Basically the
+idea is that every time we get start element, we ask the block what to do
+about it. If it wants a tree below it, it should call e.tree If a tree was
+requested, elements below the current one are <b>not</b> processed. If it
+wasn&#8216;t, they are.
+</p>
+<p>
+For example:
+</p>
+<pre>
+ &lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&lt;foo2/&gt;
+ yield &lt;foo&gt; ... &lt;/foo&gt;
+ .complete! called
+ process &lt;foo2&gt; next
+</pre>
+<p>
+But:
+</p>
+<pre>
+ &lt;foo&gt;&lt;bar/&gt;&lt;/foo&gt;&lt;foo2/&gt;
+ yield &lt;foo&gt; ... &lt;/foo&gt;
+ .complete! not called
+ process &lt;bar&gt; next
+</pre>
+<p>
+FIXME: yielded values are not reusable for now FIXME: make more
+object-oriented
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show source</a> ]</p>
+  <div id="M000020_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 537</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_as_twigs</span>(<span class="ruby-identifier">stream</span>)
+        <span class="ruby-identifier">parser</span> = <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parsers</span><span class="ruby-operator">::</span><span class="ruby-constant">BaseParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">stream</span>
+        <span class="ruby-comment cmt"># We don't really need to keep the stack ;-)</span>
+        <span class="ruby-identifier">stack</span> = []
+        <span class="ruby-keyword kw">while</span> <span class="ruby-keyword kw">true</span>
+            <span class="ruby-identifier">event</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">pull</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:start_element</span>
+                <span class="ruby-comment cmt"># Now the evil part evil</span>
+                <span class="ruby-identifier">attrs</span> = {}
+                <span class="ruby-identifier">event</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">attrs</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">xml_unescape</span>}
+                <span class="ruby-identifier">node</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attrs</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">event</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+                
+                <span class="ruby-comment cmt"># I can't say it's superelegant</span>
+                <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span><span class="ruby-identifier">node</span>
+                    <span class="ruby-identifier">attr_accessor</span> <span class="ruby-identifier">:do_complete</span>
+                    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">complete!</span>
+                        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@do_complete</span>
+                            <span class="ruby-ivar">@do_complete</span>.<span class="ruby-identifier">call</span>
+                            <span class="ruby-ivar">@do_complete</span> = <span class="ruby-keyword kw">nil</span>
+                        <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+                <span class="ruby-identifier">node</span>.<span class="ruby-identifier">do_complete</span> = <span class="ruby-identifier">proc</span>{
+                    <span class="ruby-identifier">parse_subtree</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">parser</span>)
+                }
+
+                <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">node</span>)
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">do_complete</span>
+                    <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">node</span>
+                    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">do_complete</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># It's too late, complete! shouldn't do anything now</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_element</span>
+                <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">pop</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_document</span>
+                <span class="ruby-keyword kw">return</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># FIXME: Do the right thing.</span>
+                <span class="ruby-comment cmt"># For now, ignore *everything* else</span>
+                <span class="ruby-comment cmt"># This is totally incorrect, user might want to </span>
+                <span class="ruby-comment cmt"># see text, comments and stuff like that anyway</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000023"></a><b>parse_sequence</b>(stream, options={})
+  </div>
+  <div class="description">
+  <p>
+Parse a sequence. Equivalent to <a
+href="XML.html#M000022">XML.parse</a>(stream, :multiple_roots =&gt; true).
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000023_source')" id="l_M000023_source">show source</a> ]</p>
+  <div id="M000023_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 734</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_sequence</span>(<span class="ruby-identifier">stream</span>, <span class="ruby-identifier">options</span>={})
+        <span class="ruby-identifier">o</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-identifier">o</span>[<span class="ruby-identifier">:multiple_roots</span>] = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">stream</span>, <span class="ruby-identifier">o</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000021"></a><b>parse_subtree</b>(start_node, parser)
+  </div>
+  <div class="description">
+  <p>
+Basically it&#8216;s a copy of self.parse, ugly &#8230;
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show source</a> ]</p>
+  <div id="M000021_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 583</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_subtree</span>(<span class="ruby-identifier">start_node</span>, <span class="ruby-identifier">parser</span>)
+        <span class="ruby-identifier">stack</span> = [<span class="ruby-identifier">start_node</span>]
+        <span class="ruby-identifier">res</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-keyword kw">true</span>
+            <span class="ruby-identifier">event</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">pull</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:start_element</span>
+                <span class="ruby-identifier">attrs</span> = {}
+                <span class="ruby-identifier">event</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">attrs</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">xml_unescape</span>}
+                <span class="ruby-identifier">stack</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attrs</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">event</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+                    <span class="ruby-identifier">res</span> = <span class="ruby-identifier">stack</span>[<span class="ruby-value">0</span>] 
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">stack</span>[<span class="ruby-value">-2</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>]
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_element</span>
+                <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">pop</span>
+                <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span> <span class="ruby-operator">==</span> []
+            <span class="ruby-comment cmt"># Needs unescaping</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:text</span>
+                 <span class="ruby-comment cmt"># Ignore whitespace</span>
+                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                     <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/\S/</span>
+                     <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Non-whitespace text out of document root&quot;</span>
+                 <span class="ruby-keyword kw">end</span>
+                 <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">xml_unescape</span>
+            <span class="ruby-comment cmt"># CDATA is already unescaped</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:cdata</span>
+                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                     <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;CDATA out of the document root&quot;</span>
+                 <span class="ruby-keyword kw">end</span>
+                 <span class="ruby-identifier">stack</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">event</span>[<span class="ruby-value">1</span>]
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:end_document</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Parse error: end_document inside a subtree, tags are not balanced&quot;</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:xmldecl</span>,<span class="ruby-identifier">:start_doctype</span>,<span class="ruby-identifier">:end_doctype</span>,<span class="ruby-identifier">:elementdecl</span>,<span class="ruby-identifier">:processing_instruction</span>
+                <span class="ruby-comment cmt"># Positivery ignore</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:comment</span>,<span class="ruby-identifier">:externalentity</span>,<span class="ruby-identifier">:entity</span>,<span class="ruby-identifier">:attlistdecl</span>,<span class="ruby-identifier">:notationdecl</span>
+                <span class="ruby-comment cmt"># Ignore ???</span>
+                <span class="ruby-comment cmt">#print &quot;Ignored XML event #{event[0]} when parsing\n&quot;</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># Huh ? What's that ?</span>
+                <span class="ruby-comment cmt">#print &quot;Unknown XML event #{event[0]} when parsing\n&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">res</span>
+
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000024"></a><b>renormalize</b>(stream)
+  </div>
+  <div class="description">
+  <p>
+Renormalize a string containing <a href="XML.html">XML</a> document
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000024_source')" id="l_M000024_source">show source</a> ]</p>
+  <div id="M000024_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 741</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">renormalize</span>(<span class="ruby-identifier">stream</span>)
+        <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">stream</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000025"></a><b>renormalize_sequence</b>(stream)
+  </div>
+  <div class="description">
+  <p>
+Renormalize a string containing a sequence of <a href="XML.html">XML</a>
+documents and strings XMLrenormalize_sequence(&quot;&lt;hello /&gt;,
+&lt;world&gt;&lt;/world&gt;!&quot;) =&gt; &quot;&lt;hello/&gt;,
+&lt;world/&gt;!&quot;
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000025_source')" id="l_M000025_source">show source</a> ]</p>
+  <div id="M000025_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 749</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">renormalize_sequence</span>(<span class="ruby-identifier">stream</span>)
+        <span class="ruby-identifier">parse_sequence</span>(<span class="ruby-identifier">stream</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000031"></a><b>&lt;&lt;</b>(cnt)
+  </div>
+  <div class="description">
+  <p>
+Add <a href="XML.html#M000050">children</a>. Possible uses:
+</p>
+<ul>
+<li>Add single element
+
+</li>
+</ul>
+<pre>
+ self &lt;&lt; xml(...)
+ self &lt;&lt; &quot;foo&quot;
+</pre>
+<p>
+Add nothing:
+</p>
+<pre>
+ self &lt;&lt; nil
+</pre>
+<p>
+Add multiple elements (also works recursively):
+</p>
+<pre>
+ self &lt;&lt; [a, b, c]
+ self &lt;&lt; [a, [b, c], d]
+</pre>
+  </div>
+<div class="aka">
+  This method is also aliased as
+  <a href="XML.html#M000045">add!</a>
+</div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000031_source')" id="l_M000031_source">show source</a> ]</p>
+  <div id="M000031_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 863</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">cnt</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cnt</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-comment cmt"># skip</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">cnt</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+            <span class="ruby-identifier">cnt</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">elem</span>}
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@contents</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cnt</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000032"></a><b>==</b>(x)
+  </div>
+  <div class="description">
+  <p>
+Equality test, works as if XMLs were normalized, so:
+</p>
+<pre>
+ XML.new(:foo, &quot;Hello, &quot;, &quot;world&quot;) == XML.new(:foo, &quot;Hello, world&quot;)
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000032_source')" id="l_M000032_source">show source</a> ]</p>
+  <div id="M000032_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 876</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">x</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">attrs</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">attrs</span>
+        <span class="ruby-comment cmt"># Now the hard part, strings can be split in different ways</span>
+        <span class="ruby-comment cmt"># empty string children are possible etc.</span>
+        <span class="ruby-identifier">self_i</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">othr_i</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">self_i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">size</span>
+            <span class="ruby-comment cmt"># Ignore &quot;&quot;s</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>
+                <span class="ruby-identifier">self_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>
+                <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-comment cmt"># If one is finished and the other contains non-empty elements,</span>
+            <span class="ruby-comment cmt"># they are not equal</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">self_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">size</span>
+
+            <span class="ruby-comment cmt"># Are they both Strings ?</span>
+            <span class="ruby-comment cmt"># Strings can be divided in different ways, and calling normalize!</span>
+            <span class="ruby-comment cmt"># here would be rather expensive, so let's use this complicated</span>
+            <span class="ruby-comment cmt"># algorithm</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">a</span> = <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>]
+                <span class="ruby-identifier">b</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>]
+                <span class="ruby-identifier">self_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;&quot;</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>
+                        <span class="ruby-identifier">a</span> = <span class="ruby-value str">&quot;&quot;</span>
+                        <span class="ruby-identifier">b</span> = <span class="ruby-value str">&quot;&quot;</span>
+                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">size</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>
+                        <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a</span>[<span class="ruby-identifier">b</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+                        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                            <span class="ruby-identifier">b</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>]
+                            <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                            <span class="ruby-keyword kw">next</span>
+                        <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">a</span>
+                        <span class="ruby-identifier">b</span> = <span class="ruby-identifier">b</span>[<span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+                        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                            <span class="ruby-identifier">a</span> = <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>]
+                            <span class="ruby-identifier">self_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                            <span class="ruby-keyword kw">next</span>
+                        <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">else</span>
+                        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+
+            <span class="ruby-comment cmt"># OK, so at least one of them is not a String.</span>
+            <span class="ruby-comment cmt"># Hopefully they're either both XMLs or one is an XML and the</span>
+            <span class="ruby-comment cmt"># other is a String. It is also possible that contents contains</span>
+            <span class="ruby-comment cmt"># something illegal, but we aren't catching that,</span>
+            <span class="ruby-comment cmt"># so xml(:foo, Garbage.new) is going to at least equal itself.</span>
+            <span class="ruby-comment cmt"># And we aren't, because xml(:foo, Garbage.new) == xml(:bar, Garbage.new)</span>
+            <span class="ruby-comment cmt"># is going to return an honest false, and incoherent sanity</span>
+            <span class="ruby-comment cmt"># check is worse than no sanity check.</span>
+            <span class="ruby-comment cmt">#</span>
+            <span class="ruby-comment cmt"># Oh yeah, they can be XML_PI or XML_Comment. In such case, this</span>
+            <span class="ruby-comment cmt"># is ok.</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">contents</span>[<span class="ruby-identifier">self_i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">contents</span>[<span class="ruby-identifier">othr_i</span>]
+            <span class="ruby-identifier">self_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">othr_i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000037"></a><b>=~</b>(pattern)
+  </div>
+  <div class="description">
+  <h1>~ for a few reasonable patterns</h1>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000037_source')" id="l_M000037_source">show source</a> ]</p>
+  <div id="M000037_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1085</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">=~</span>(<span class="ruby-identifier">pattern</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Symbol</span>
+            <span class="ruby-ivar">@name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pattern</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Regexp</span>
+            <span class="ruby-identifier">rv</span> = <span class="ruby-identifier">text</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pattern</span>
+        <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># Hash, Pattern_any, Pattern_all</span>
+            <span class="ruby-identifier">pattern</span> <span class="ruby-operator">===</span> <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000029"></a><b>[]</b>(key)
+  </div>
+  <div class="description">
+  <p>
+Read attributes. Also works with pseudoattributes:
+</p>
+<pre>
+ img[:@x] == img.child(:x).text # or nil if there isn't any.
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000029_source')" id="l_M000029_source">show source</a> ]</p>
+  <div id="M000029_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 820</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">?@</span>
+            <span class="ruby-identifier">tag</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">to_sym</span>
+            <span class="ruby-identifier">c</span> = <span class="ruby-identifier">child</span>(<span class="ruby-identifier">tag</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@attrs</span>[<span class="ruby-identifier">key</span>]
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000030"></a><b>[]=</b>(key, value)
+  </div>
+  <div class="description">
+  <p>
+Set attributes. Value is automatically converted to <a
+href="String.html">String</a>, so you can say:
+</p>
+<pre>
+ img[:x] = 200
+</pre>
+<p>
+Also works with pseudoattributes:
+</p>
+<pre>
+ foo[:@bar] = &quot;x&quot;
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000030_source')" id="l_M000030_source">show source</a> ]</p>
+  <div id="M000030_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 839</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">?@</span>
+            <span class="ruby-identifier">tag</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">to_sym</span>
+            <span class="ruby-identifier">c</span> = <span class="ruby-identifier">child</span>(<span class="ruby-identifier">tag</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">contents</span> = [<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>]
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tag</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+            <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@attrs</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000045"></a><b>add!</b>(cnt)
+  </div>
+  <div class="description">
+  <p>
+Alias for #&lt;&lt;
+</p>
+  </div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000040"></a><b>add_pretty_printing!</b>()
+  </div>
+  <div class="description">
+  <p>
+Add pretty-printing whitespace. Also normalizes the <a
+href="XML.html">XML</a>.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000040_source')" id="l_M000040_source">show source</a> ]</p>
+  <div id="M000040_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1121</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_pretty_printing!</span>
+        <span class="ruby-identifier">normalize!</span>
+        <span class="ruby-identifier">real_add_pretty_printing!</span>
+        <span class="ruby-identifier">normalize!</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000048"></a><b>child</b>(pat=nil, *rest)
+  </div>
+  <div class="description">
+  <p>
+Equivalent to node.children(pat, *rest)[0] Returns nil if there
+aren&#8216;t any matching <a href="XML.html#M000050">children</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000048_source')" id="l_M000048_source">show source</a> ]</p>
+  <div id="M000048_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1205</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">child</span>(<span class="ruby-identifier">pat</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>)
+        <span class="ruby-identifier">children</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">c</span>
+        }
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000050"></a><b>children</b>(pat=nil, *rest) {|c if block_given?| ...}
+  </div>
+  <div class="description">
+  <p>
+<a href="XML.html#M000050">XML#children</a>(pattern, more_patterns) Return
+all <a href="XML.html#M000050">children</a> of a node with tags matching
+tag. Also:
+</p>
+<ul>
+<li><a href="XML.html#M000050">children</a>(:a, :b) == <a
+href="XML.html#M000050">children</a>(:a).<a
+href="XML.html#M000050">children</a>(:b)
+
+</li>
+<li><a href="XML.html#M000050">children</a>(:a, :*, :c) == <a
+href="XML.html#M000050">children</a>(:a).<a
+href="XML.html#M000051">descendants</a>(:c)
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000050_source')" id="l_M000050_source">show source</a> ]</p>
+  <div id="M000050_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1226</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">children</span>(<span class="ruby-identifier">pat</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">descendants</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pat</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:*</span>
+        <span class="ruby-identifier">res</span> = []
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pat</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">pat</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rest</span> <span class="ruby-operator">==</span> []
+                    <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+                    <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">children</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000014"></a><b>children_sort_by</b>(*args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Sort <a href="XML.html#M000050">children</a> of <a href="XML.html">XML</a>
+element.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show source</a> ]</p>
+  <div id="M000014_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 391</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">children_sort_by</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-ivar">@contents</span> = <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">sort_by</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000052"></a><b>deep_map</b>(pat) {|self| ...}
+  </div>
+  <div class="description">
+  <p>
+Change elements based on pattern
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000052_source')" id="l_M000052_source">show source</a> ]</p>
+  <div id="M000052_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1269</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deep_map</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pat</span>
+            <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">r</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attrs</span>)
+            <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                    <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">deep_map</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-keyword kw">end</span>
+            }
+            <span class="ruby-identifier">r</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000049"></a><b>descendant</b>(pat=nil, *rest)
+  </div>
+  <div class="description">
+  <p>
+Equivalent to node.descendants(pat, *rest)[0] Returns nil if there
+aren&#8216;t any matching <a href="XML.html#M000051">descendants</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000049_source')" id="l_M000049_source">show source</a> ]</p>
+  <div id="M000049_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1214</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">pat</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>)
+        <span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">c</span>
+        }
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000051"></a><b>descendants</b>(pat=nil, *rest) {|c if block_given?| ...}
+  </div>
+  <div class="description">
+  <ul>
+<li><a href="XML.html#M000051">XML#descendants</a>
+
+</li>
+<li><a href="XML.html#M000051">XML#descendants(pattern)</a>
+
+</li>
+<li><a href="XML.html#M000051">XML#descendants</a>(pattern, more_patterns)
+
+</li>
+</ul>
+<p>
+Return all <a href="XML.html#M000051">descendants</a> of a node matching
+the pattern. If pattern==nil, simply return all <a
+href="XML.html#M000051">descendants</a>. Optionally run a block on <a
+href="XML.html#M000012">each</a> of them if a block was given. If
+pattern==nil, also match Strings !
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000051_source')" id="l_M000051_source">show source</a> ]</p>
+  <div id="M000051_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1250</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">pat</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-identifier">res</span> = []
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pat</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">pat</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rest</span> <span class="ruby-operator">==</span> []
+                    <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+                    <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+                <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">children</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">descendants</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000042"></a><b>dup</b>(&amp;blk)
+  </div>
+  <div class="description">
+  <p>
+This is not a trivial method - first it does a <b>deep</b> copy, second it
+takes a block which is instance_eval&#8216;ed, so you can do things like:
+</p>
+<ul>
+<li>node.dup{ @name = :foo }
+
+</li>
+<li>node.dup{ self[:color] = &quot;blue&quot; }
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000042_source')" id="l_M000042_source">show source</a> ]</p>
+  <div id="M000042_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1147</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dup</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-identifier">new_obj</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">raw_dup</span>
+        <span class="ruby-comment cmt"># Attr values stay shared - ugly</span>
+        <span class="ruby-identifier">new_obj</span>.<span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">new_obj</span>.<span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-identifier">new_obj</span>.<span class="ruby-identifier">contents</span> = <span class="ruby-identifier">new_obj</span>.<span class="ruby-identifier">contents</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">dup</span>}
+        
+        <span class="ruby-identifier">new_obj</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">blk</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">new_obj</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000012"></a><b>each</b>(*selector, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Iterate over <a href="XML.html#M000050">children</a>, possibly with a
+selector
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show source</a> ]</p>
+  <div id="M000012_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 380</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">selector</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-identifier">children</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">selector</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000034"></a><b>exec!</b>(&amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Make monadic interface more &quot;official&quot;
+</p>
+<ul>
+<li>node.exec! { foo!; bar! }
+
+</li>
+</ul>
+<p>
+is equivalent to
+</p>
+<ul>
+<li>node &lt;&lt; xml(:foo) &lt;&lt; xml(:bar)
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000034_source')" id="l_M000034_source">show source</a> ]</p>
+  <div id="M000034_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 965</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000028"></a><b>inspect</b>(include_children=0)
+  </div>
+  <div class="description">
+  <p>
+Convert to a well-formatted <a href="XML.html">XML</a>, but without <a
+href="XML.html#M000050">children</a> information. This is a reasonable
+format for irb and debugging. If you want to see a few levels of <a
+href="XML.html#M000050">children</a>, call <a
+href="XML.html#M000028">inspect</a>(2) and so on
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000028_source')" id="l_M000028_source">show source</a> ]</p>
+  <div id="M000028_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 806</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>(<span class="ruby-identifier">include_children</span>=<span class="ruby-value">0</span>)
+        <span class="ruby-node">&quot;&lt;#{@name}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@attrs</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot; #{k}='#{v.xml_attr_escape}'&quot;</span>}.<span class="ruby-identifier">join</span> <span class="ruby-operator">+</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+            <span class="ruby-value str">&quot;/&gt;&quot;</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">include_children</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+            <span class="ruby-node">&quot;&gt;...&lt;/#{name}&gt;&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-value str">&quot;&gt;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">xml_escape</span> <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">inspect</span>(<span class="ruby-identifier">include_children</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword kw">end</span>}.<span class="ruby-identifier">join</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;&lt;/#{name}&gt;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000053"></a><b>map</b>(pat=nil) {|c| ...}
+  </div>
+  <div class="description">
+  <p>
+FIXME: do we want a shallow or a deep copy here ? Map <a
+href="XML.html#M000050">children</a>, but leave the name/attributes
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000053_source')" id="l_M000053_source">show source</a> ]</p>
+  <div id="M000053_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1287</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">pat</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">r</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attrs</span>)
+        <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">pat</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pat</span>
+                <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">c</span>)
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-identifier">r</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000033"></a><b>method_missing</b>(meth, *args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Define all foo!-methods for monadic interface, so you can write:
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000033_source')" id="l_M000033_source">show source</a> ]</p>
+  <div id="M000033_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 953</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) 
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(.*)!$/</span>
+            <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">real_method_missing</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000046"></a><b>normalize!</b>()
+  </div>
+  <div class="description">
+  <p>
+Normalization means joining strings and getting rid of &quot;&quot;s,
+recursively
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000046_source')" id="l_M000046_source">show source</a> ]</p>
+  <div id="M000046_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1171</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">normalize!</span>
+        <span class="ruby-identifier">new_contents</span> = []
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new_contents</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                    <span class="ruby-identifier">new_contents</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>
+                    <span class="ruby-keyword kw">next</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">normalize!</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">new_contents</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">c</span>
+        }
+        <span class="ruby-ivar">@contents</span> = <span class="ruby-identifier">new_contents</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000035"></a><b>range</b>(range_start, range_end, end_reached_cb=nil)
+  </div>
+  <div class="description">
+  <p>
+Select a subtree NOTE: Uses object_id of the start/end tags ! They have to
+be the same, not just identical !
+&lt;foo&gt;0&lt;a&gt;1&lt;/a&gt;&lt;b/&gt;&lt;c/&gt;&lt;d&gt;2&lt;/d&gt;&lt;e/&gt;3&lt;/foo&gt;.<a
+href="XML.html#M000035">range</a>(&lt;a&gt;1&lt;/a&gt;,
+&lt;d&gt;2&lt;/d&gt;) returns &lt;foo&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;
+start and end and their <a href="XML.html#M000051">descendants</a> are not
+included in the result tree. Either start or end can be nil.
+</p>
+<ul>
+<li>If both start and end are nil, return whole tree.
+
+</li>
+<li>If start is nil, return subtree up to range_end.
+
+</li>
+<li>If start is not inside the tree, return nil.
+
+</li>
+<li>If end is nil, return subtree from start
+
+</li>
+<li>If end is not inside the tree, return subtree from start.
+
+</li>
+<li>If end is before or below start, or they&#8216;re the same node, the result
+is unspecified.
+
+</li>
+<li>if end comes directly after start, or as first node when start==nil, return
+path reaching there.
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000035_source')" id="l_M000035_source">show source</a> ]</p>
+  <div id="M000035_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 985</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>(<span class="ruby-identifier">range_start</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-identifier">end_reached_cb</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_start</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-identifier">result</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span>)
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-comment cmt"># end reached !</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_end</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">range_end</span>.<span class="ruby-identifier">object_id</span>
+                <span class="ruby-identifier">end_reached_cb</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">end_reached_cb</span>
+                <span class="ruby-keyword kw">break</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-comment cmt"># start reached !</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_start</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">range_start</span>.<span class="ruby-identifier">object_id</span>
+                <span class="ruby-identifier">result</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span>)
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> <span class="ruby-comment cmt"># We already started</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                    <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">false</span>
+                    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">add!</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">range</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-identifier">lambda</span>{ <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">true</span> })
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">break_me</span>
+                        <span class="ruby-identifier">end_reached_cb</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">end_reached_cb</span>
+                        <span class="ruby-keyword kw">break</span>
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># String/XML_PI/XML_Comment</span>
+                    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">add!</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># Strings/XML_PI/XML_Comment obviously cannot start a range</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                    <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">false</span>
+                    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">range</span>(<span class="ruby-identifier">range_start</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-identifier">lambda</span>{ <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">true</span> })
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>
+                        <span class="ruby-comment cmt"># start reached !</span>
+                        <span class="ruby-identifier">result</span> = <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">attrs</span>, <span class="ruby-identifier">r</span>)
+                    <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">break_me</span>
+                        <span class="ruby-comment cmt"># end reached !</span>
+                        <span class="ruby-identifier">end_reached_cb</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">end_reached_cb</span>
+                        <span class="ruby-keyword kw">break</span>
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000038"></a><b>remove_pretty_printing!</b>(exceptions=nil)
+  </div>
+  <div class="description">
+  <p>
+Get rid of pretty-printing whitespace. Also normalizes the <a
+href="XML.html">XML</a>.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000038_source')" id="l_M000038_source">show source</a> ]</p>
+  <div id="M000038_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1096</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_pretty_printing!</span>(<span class="ruby-identifier">exceptions</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">normalize!</span>
+        <span class="ruby-identifier">real_remove_pretty_printing!</span>(<span class="ruby-identifier">exceptions</span>)
+        <span class="ruby-identifier">normalize!</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000015"></a><b>sort</b>(*args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Sort <a href="XML.html#M000050">children</a> of <a href="XML.html">XML</a>
+element.
+</p>
+<p>
+Using <a href="XML.html#M000015">sort</a> is highly wrong, as <a
+href="XML.html">XML</a> (and <a href="XML.html">XML</a>-extras) is not even
+Comparable. Use <a href="XML.html#M000013">sort_by</a> instead.
+</p>
+<p>
+Unless you define your own <a href="XML.html">XML</a>#&lt;=&gt; operator,
+or do something equally weird.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000015_source')" id="l_M000015_source">show source</a> ]</p>
+  <div id="M000015_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 401</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sort</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-ivar">@contents</span> = <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">sort</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000013"></a><b>sort_by</b>(*args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Sort <a href="XML.html">XML</a> <a href="XML.html#M000050">children</a> of
+<a href="XML.html">XML</a> element.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show source</a> ]</p>
+  <div id="M000013_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 386</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sort_by</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>{ <span class="ruby-ivar">@contents</span> = <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>}.<span class="ruby-identifier">sort_by</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000036"></a><b>subsequence</b>(range_start, range_end, start_seen_cb=nil, end_seen_cb=nil)
+  </div>
+  <div class="description">
+  <p>
+<a href="XML.html#M000036">XML#subsequence</a> is similar to <a
+href="XML.html#M000035">XML#range</a>, but instead of trimmed subtree in
+returns a list of elements The same elements are included in both cases,
+but here we do not include any parents !
+</p>
+<p>
+&lt;foo&gt;&lt;a/&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000035">range</a>(a,c) =&gt;
+&lt;foo&gt;&lt;b/&gt;&lt;/foo&gt;
+&lt;foo&gt;&lt;a/&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000036">subsequence</a>(a,c) =&gt; &lt;b/&gt;
+</p>
+<p>
+&lt;foo&gt;&lt;a&gt;&lt;a1/&gt;&lt;/a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000035">range</a>(a1,c) =&gt;
+&lt;foo&gt;&lt;a/&gt;&lt;b/&gt;&lt;/foo&gt; # Does &lt;a/&gt; make sense ?
+&lt;foo&gt;&lt;a&gt;&lt;a1/&gt;&lt;/a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000036">subsequence</a>(a1,c) =&gt; &lt;b/&gt;
+</p>
+<p>
+&lt;foo&gt;&lt;a&gt;&lt;a1/&gt;&lt;a2/&gt;&lt;/a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000035">range</a>(a1,c) =&gt;
+&lt;foo&gt;&lt;a&gt;&lt;a2/&gt;&lt;/a&gt;&lt;b/&gt;&lt;/foo&gt;
+&lt;foo&gt;&lt;a&gt;&lt;a1/&gt;&lt;a2/&gt;&lt;/a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/foo&gt;.<a
+href="XML.html#M000036">subsequence</a>(a1,c) =&gt; &lt;a2/&gt;&lt;b/&gt;
+</p>
+<p>
+And we return [], not nil if nothing matches
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000036_source')" id="l_M000036_source">show source</a> ]</p>
+  <div id="M000036_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1048</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">range_start</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-identifier">start_seen_cb</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">end_seen_cb</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-identifier">result</span> = []
+        <span class="ruby-identifier">start_seen</span> = <span class="ruby-identifier">range_start</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_end</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">range_end</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">object_id</span>
+                <span class="ruby-identifier">end_seen_cb</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">end_seen_cb</span>
+                <span class="ruby-keyword kw">break</span> 
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_start</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">range_start</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">object_id</span>
+                <span class="ruby-identifier">start_seen</span> = <span class="ruby-keyword kw">true</span>
+                <span class="ruby-identifier">start_seen_cb</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">start_seen_cb</span>
+                <span class="ruby-keyword kw">next</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">start_seen</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                    <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">false</span>
+                    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">lambda</span>{<span class="ruby-identifier">break_me</span>=<span class="ruby-keyword kw">true</span>})
+                    <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">break_me</span>
+                <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># String/XML_PI/XML_Comment</span>
+                    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># String/XML_PI/XML_Comment cannot start a subsequence</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                    <span class="ruby-identifier">break_me</span> = <span class="ruby-keyword kw">false</span>
+                    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">subsequence</span>(<span class="ruby-identifier">range_start</span>, <span class="ruby-identifier">range_end</span>, <span class="ruby-identifier">lambda</span>{<span class="ruby-identifier">start_seen</span>=<span class="ruby-keyword kw">true</span>}, <span class="ruby-identifier">lambda</span>{<span class="ruby-identifier">break_me</span>=<span class="ruby-keyword kw">true</span>})
+                    <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">break_me</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-comment cmt"># Include starting tag if it was right from the range_start</span>
+        <span class="ruby-comment cmt"># Otherwise, return just the raw sequence</span>
+        <span class="ruby-identifier">result</span> = [<span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@attrs</span>, <span class="ruby-identifier">result</span>)] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">range_start</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000047"></a><b>text</b>()
+  </div>
+  <div class="description">
+  <p>
+Return <a href="XML.html#M000047">text</a> below the node, stripping all <a
+href="XML.html">XML</a> tags, &quot;&lt;foo&gt;Hello,
+&lt;bar&gt;world&lt;/bar&gt;!&lt;/foo&gt;&quot;.xml_parse.text returns
+&quot;Hello, world!&quot;
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000047_source')" id="l_M000047_source">show source</a> ]</p>
+  <div id="M000047_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1191</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>
+        <span class="ruby-identifier">res</span> = <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">text</span>
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+            <span class="ruby-keyword kw">end</span> <span class="ruby-comment cmt"># Ignore XML_PI/XML_Comment</span>
+        }
+        <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000043"></a><b>text!</b>(*args)
+  </div>
+  <div class="description">
+  <p>
+Add some <a href="String.html">String</a> <a
+href="XML.html#M000050">children</a> (all attributes get <a
+href="XML.html#M000027">to_s</a>&#8216;ed)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000043_source')" id="l_M000043_source">show source</a> ]</p>
+  <div id="M000043_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1159</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>}
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000027"></a><b>to_s</b>()
+  </div>
+  <div class="description">
+  <p>
+Convert to a well-formatted <a href="XML.html">XML</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000027_source')" id="l_M000027_source">show source</a> ]</p>
+  <div id="M000027_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 794</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+        <span class="ruby-node">&quot;&lt;#{@name}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@attrs</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot; #{k}='#{v.xml_attr_escape}'&quot;</span>}.<span class="ruby-identifier">join</span> <span class="ruby-operator">+</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+            <span class="ruby-value str">&quot;/&gt;&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-value str">&quot;&gt;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">xml_escape</span> <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">end</span>}.<span class="ruby-identifier">join</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;&lt;/#{name}&gt;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000044"></a><b>xml!</b>(*args, &amp;blk)
+  </div>
+  <div class="description">
+  <p>
+Add <a href="XML.html">XML</a> <a href="XML.html#M000048">child</a>
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000044_source')" id="l_M000044_source">show source</a> ]</p>
+  <div id="M000044_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1163</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+        <span class="ruby-ivar">@contents</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Protected Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000041"></a><b>real_add_pretty_printing!</b>(indent = &quot;&quot;)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000041_source')" id="l_M000041_source">show source</a> ]</p>
+  <div id="M000041_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1127</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">real_add_pretty_printing!</span>(<span class="ruby-identifier">indent</span> = <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">real_add_pretty_printing!</span>(<span class="ruby-identifier">indent</span><span class="ruby-operator">+</span><span class="ruby-value str">&quot;  &quot;</span>)
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\n\s*/</span>, <span class="ruby-node">&quot;\n#{indent}  &quot;</span>)
+            <span class="ruby-keyword kw">end</span>
+        }
+        <span class="ruby-ivar">@contents</span> = <span class="ruby-ivar">@contents</span>.<span class="ruby-identifier">inject</span>([]){<span class="ruby-operator">|</span><span class="ruby-identifier">children</span>, <span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">children</span> <span class="ruby-operator">+</span> [<span class="ruby-node">&quot;\n#{indent}  &quot;</span>, <span class="ruby-identifier">c</span>]}<span class="ruby-operator">+</span>[<span class="ruby-node">&quot;\n#{indent}&quot;</span>]
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000039"></a><b>real_remove_pretty_printing!</b>(exceptions=nil)
+  </div>
+  <div class="description">
+  <p>
+<a href="XML.html#M000046">normalize!</a> is already recursive, so only one
+call at top level is needed. This helper method lets us avoid extra calls
+to <a href="XML.html#M000046">normalize!</a>.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000039_source')" id="l_M000039_source">show source</a> ]</p>
+  <div id="M000039_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 1104</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">real_remove_pretty_printing!</span>(<span class="ruby-identifier">exceptions</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exceptions</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">exceptions</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@name</span>
+        <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/^\s+/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/\s+$/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\s+/</span>, <span class="ruby-value str">&quot; &quot;</span>)
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML_PI</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">XML_Comment</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">c</span>.<span class="ruby-identifier">real_remove_pretty_printing!</span>(<span class="ruby-identifier">exceptions</span>)
+            <span class="ruby-keyword kw">end</span>
+        }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

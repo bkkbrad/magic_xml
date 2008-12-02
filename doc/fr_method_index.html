@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+<!--
+  body {
+    background-color: #EEE;
+    font-family: "Bitstream Vera Sans", Verdana, Arial, Helvetica, sans-serif; 
+    color: #000;
+    margin: 0px;
+  }
+  .banner {
+    background: #005;
+    color: #FFF;
+    padding: 0.2em;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+  }
+  .entries {
+    margin: 0.25em 1em 0 1em;
+    font-size: x-small;
+  }
+  a {
+    color: #00F;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  a:hover {
+    color: #77F;
+    text-decoration: underline;
+  }
+-->
+</style>
+<base target="docwin">
+</head>
+<body>
+<div class="banner">Methods</div>
+<div class="entries">
+<a href="classes/XML.html#M000031"><< (XML)</a><br>
+<a href="classes/Symbol.html#M000054"><=> (Symbol)</a><br>
+<a href="classes/XML.html#M000032">== (XML)</a><br>
+<a href="classes/Patterns_any.html#M000107">=== (Patterns_any)</a><br>
+<a href="classes/Hash.html#M000105">=== (Hash)</a><br>
+<a href="classes/Patterns_all.html#M000109">=== (Patterns_all)</a><br>
+<a href="classes/Symbol.html#M000055">=== (Symbol)</a><br>
+<a href="classes/XML.html#M000037">=~ (XML)</a><br>
+<a href="classes/XML.html#M000029">[] (XML)</a><br>
+<a href="classes/XML.html#M000030">[]= (XML)</a><br>
+<a href="classes/XML.html#M000045">add! (XML)</a><br>
+<a href="classes/XML.html#M000040">add_pretty_printing! (XML)</a><br>
+<a href="files/magic_xml_rb.html#M000003">all (magic_xml.rb)</a><br>
+<a href="files/magic_xml_rb.html#M000004">any (magic_xml.rb)</a><br>
+<a href="classes/XML.html#M000048">child (XML)</a><br>
+<a href="classes/Array.html#M000103">children (Array)</a><br>
+<a href="classes/XML.html#M000050">children (XML)</a><br>
+<a href="classes/XML.html#M000014">children_sort_by (XML)</a><br>
+<a href="classes/XML.html#M000052">deep_map (XML)</a><br>
+<a href="classes/XML.html#M000049">descendant (XML)</a><br>
+<a href="classes/Array.html#M000104">descendants (Array)</a><br>
+<a href="classes/XML.html#M000051">descendants (XML)</a><br>
+<a href="classes/XML.html#M000042">dup (XML)</a><br>
+<a href="classes/XML.html#M000012">each (XML)</a><br>
+<a href="classes/XML.html#M000034">exec! (XML)</a><br>
+<a href="classes/XML.html#M000017">from_file (XML)</a><br>
+<a href="classes/XML.html#M000018">from_url (XML)</a><br>
+<a href="classes/XML.html#M000028">inspect (XML)</a><br>
+<a href="classes/XML.html#M000019">load (XML)</a><br>
+<a href="files/xquery_use_cases/tree/q1_rb.html#M000006">local_toc (xquery_use_cases/tree/q1.rb)</a><br>
+<a href="classes/XML.html#M000053">map (XML)</a><br>
+<a href="classes/XML.html#M000016">method_missing (XML)</a><br>
+<a href="classes/XML.html#M000033">method_missing (XML)</a><br>
+<a href="classes/Patterns_any.html#M000106">new (Patterns_any)</a><br>
+<a href="classes/XML_PI.html#M000010">new (XML_PI)</a><br>
+<a href="classes/XML.html#M000026">new (XML)</a><br>
+<a href="classes/XML_Comment.html#M000008">new (XML_Comment)</a><br>
+<a href="classes/Patterns_all.html#M000108">new (Patterns_all)</a><br>
+<a href="classes/XML.html#M000046">normalize! (XML)</a><br>
+<a href="classes/XML.html#M000022">parse (XML)</a><br>
+<a href="classes/XML.html#M000020">parse_as_twigs (XML)</a><br>
+<a href="classes/XML.html#M000023">parse_sequence (XML)</a><br>
+<a href="classes/XML.html#M000021">parse_subtree (XML)</a><br>
+<a href="files/xquery_use_cases/parts/q1_rb.html#M000005">parts_of (xquery_use_cases/parts/q1.rb)</a><br>
+<a href="classes/XML.html#M000035">range (XML)</a><br>
+<a href="classes/XML.html#M000041">real_add_pretty_printing! (XML)</a><br>
+<a href="classes/XML.html#M000039">real_remove_pretty_printing! (XML)</a><br>
+<a href="classes/XML.html#M000038">remove_pretty_printing! (XML)</a><br>
+<a href="classes/XML.html#M000024">renormalize (XML)</a><br>
+<a href="classes/XML.html#M000025">renormalize_sequence (XML)</a><br>
+<a href="files/xquery_use_cases/tree/q6_rb.html#M000007">section_summary (xquery_use_cases/tree/q6.rb)</a><br>
+<a href="classes/XML.html#M000015">sort (XML)</a><br>
+<a href="classes/XML.html#M000013">sort_by (XML)</a><br>
+<a href="classes/XML.html#M000036">subsequence (XML)</a><br>
+<a href="classes/XML_Tests.html#M000060">test_add (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000059">test_attr (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000077">test_child (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000074">test_chilrden (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000056">test_constructors (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000101">test_deep_map (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000078">test_descendant (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000075">test_descendants (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000064">test_dup (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000061">test_each (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000089">test_entities (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000063">test_eqeq (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000057">test_escapes (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000076">test_exec (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000086">test_inpsect (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000099">test_load (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000062">test_map (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000066">test_monadic (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000100">test_multielement_selectors (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000065">test_normalize (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000067">test_parse (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000085">test_parse_as_twigs (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000069">test_parse_extra_cdata (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000072">test_parse_extra_comment (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000071">test_parse_extra_dtd (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000068">test_parse_extra_escapes (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000070">test_parse_extra_qxml (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000073">test_parse_file (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000098">test_parsing_entities (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000096">test_parsing_extras (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000097">test_parsing_nopp (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000090">test_patterns (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000091">test_patterns_2 (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000092">test_patterns_3 (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000093">test_patterns_any_all (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000102">test_pretty_printer (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000087">test_pseudoattributes_read (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000088">test_pseudoattributes_write (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000081">test_range (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000084">test_real_method_missing (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000094">test_remove_pretty_printing (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000095">test_remove_pretty_printing_conditional (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000080">test_renormalize (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000058">test_sort_by (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000082">test_subsequence (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000079">test_text (XML_Tests)</a><br>
+<a href="classes/XML_Tests.html#M000083">test_xml_bang (XML_Tests)</a><br>
+<a href="classes/XML.html#M000047">text (XML)</a><br>
+<a href="classes/XML.html#M000043">text! (XML)</a><br>
+<a href="classes/XML.html#M000027">to_s (XML)</a><br>
+<a href="classes/XML_Comment.html#M000009">to_s (XML_Comment)</a><br>
+<a href="classes/XML_PI.html#M000011">to_s (XML_PI)</a><br>
+<a href="files/magic_xml_rb.html#M000001">xml (magic_xml.rb)</a><br>
+<a href="classes/XML.html#M000044">xml! (XML)</a><br>
+<a href="files/magic_xml_rb.html#M000002">xml! (magic_xml.rb)</a><br>
+<a href="classes/String.html#M000112">xml_attr_escape (String)</a><br>
+<a href="classes/String.html#M000111">xml_escape (String)</a><br>
+<a href="classes/File.html#M000110">xml_parse (File)</a><br>
+<a href="classes/String.html#M000114">xml_parse (String)</a><br>
+<a href="classes/String.html#M000113">xml_unescape (String)</a><br>
+</div>
+</body></html>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: String</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />String</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/magic_xml_rb.html">magic_xml.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Object
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000112">xml_attr_escape</a></li>
+  <li><a href="#M000111">xml_escape</a></li>
+  <li><a href="#M000114">xml_parse</a></li>
+  <li><a href="#M000113">xml_unescape</a></li>
+  </ul>
+
+
+
+
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000112"></a><b>xml_attr_escape</b>()
+  </div>
+  <div class="description">
+  <p>
+Escape characters for output as <a href="XML.html">XML</a> attribute values
+(&lt; &gt; &amp; &#8217; &quot;)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000112_source')" id="l_M000112_source">show source</a> ]</p>
+  <div id="M000112_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 46</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml_attr_escape</span>
+        <span class="ruby-identifier">replacements</span> = {<span class="ruby-value str">&quot;&lt;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;lt;&quot;</span>, <span class="ruby-value str">&quot;&gt;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;gt;&quot;</span>, <span class="ruby-value str">&quot;&amp;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;amp;&quot;</span>, <span class="ruby-value str">&quot;\&quot;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;quot;&quot;</span>, <span class="ruby-value str">&quot;'&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;apos;&quot;</span>}
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/([&lt;&gt;&amp;\'\&quot;])/</span>) { <span class="ruby-identifier">replacements</span>[<span class="ruby-identifier">$1</span>] }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000111"></a><b>xml_escape</b>()
+  </div>
+  <div class="description">
+  <p>
+Escape string for output as <a href="XML.html">XML</a> text (&lt; &gt;
+&amp;)
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000111_source')" id="l_M000111_source">show source</a> ]</p>
+  <div id="M000111_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 41</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml_escape</span>
+        <span class="ruby-identifier">replacements</span> = {<span class="ruby-value str">&quot;&lt;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;lt;&quot;</span>, <span class="ruby-value str">&quot;&gt;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;gt;&quot;</span>, <span class="ruby-value str">&quot;&amp;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&amp;amp;&quot;</span> }
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/([&lt;&gt;&amp;])/</span>) { <span class="ruby-identifier">replacements</span>[<span class="ruby-identifier">$1</span>] }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000114"></a><b>xml_parse</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000114_source')" id="l_M000114_source">show source</a> ]</p>
+  <div id="M000114_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 334</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml_parse</span>
+        <span class="ruby-constant">XML</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-keyword kw">self</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000113"></a><b>xml_unescape</b>(extra_entities=nil)
+  </div>
+  <div class="description">
+  <p>
+Unescape entities Supports:
+</p>
+<ul>
+<li>Full set of HTML-compatible named entities
+
+</li>
+<li>Decimal entities &amp;1234;
+
+</li>
+<li>Hex entities &amp;xA0b1;
+
+</li>
+</ul>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000113_source')" id="l_M000113_source">show source</a> ]</p>
+  <div id="M000113_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File magic_xml.rb, line 55</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml_unescape</span>(<span class="ruby-identifier">extra_entities</span>=<span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-ivar">@@xhtml_entity_replacements</span> <span class="ruby-operator">||=</span> {
+            <span class="ruby-value str">'nbsp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">160</span>,
+            <span class="ruby-value str">'iexcl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">161</span>,
+            <span class="ruby-value str">'cent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">162</span>,
+            <span class="ruby-value str">'pound'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">163</span>,
+            <span class="ruby-value str">'curren'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">164</span>,
+            <span class="ruby-value str">'yen'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">165</span>,
+            <span class="ruby-value str">'brvbar'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">166</span>,
+            <span class="ruby-value str">'sect'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">167</span>,
+            <span class="ruby-value str">'uml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">168</span>,
+            <span class="ruby-value str">'copy'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">169</span>,
+            <span class="ruby-value str">'ordf'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">170</span>,
+            <span class="ruby-value str">'laquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">171</span>,
+            <span class="ruby-value str">'not'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">172</span>,
+            <span class="ruby-value str">'shy'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">173</span>,
+            <span class="ruby-value str">'reg'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">174</span>,
+            <span class="ruby-value str">'macr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">175</span>,
+            <span class="ruby-value str">'deg'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">176</span>,
+            <span class="ruby-value str">'plusmn'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">177</span>,
+            <span class="ruby-value str">'sup2'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">178</span>,
+            <span class="ruby-value str">'sup3'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">179</span>,
+            <span class="ruby-value str">'acute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">180</span>,
+            <span class="ruby-value str">'micro'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">181</span>,
+            <span class="ruby-value str">'para'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">182</span>,
+            <span class="ruby-value str">'middot'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">183</span>,
+            <span class="ruby-value str">'cedil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">184</span>,
+            <span class="ruby-value str">'sup1'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">185</span>,
+            <span class="ruby-value str">'ordm'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">186</span>,
+            <span class="ruby-value str">'raquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">187</span>,
+            <span class="ruby-value str">'frac14'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">188</span>,
+            <span class="ruby-value str">'frac12'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">189</span>,
+            <span class="ruby-value str">'frac34'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">190</span>,
+            <span class="ruby-value str">'iquest'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">191</span>,
+            <span class="ruby-value str">'Agrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">192</span>,
+            <span class="ruby-value str">'Aacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">193</span>,
+            <span class="ruby-value str">'Acirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">194</span>,
+            <span class="ruby-value str">'Atilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">195</span>,
+            <span class="ruby-value str">'Auml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">196</span>,
+            <span class="ruby-value str">'Aring'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">197</span>,
+            <span class="ruby-value str">'AElig'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">198</span>,
+            <span class="ruby-value str">'Ccedil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">199</span>,
+            <span class="ruby-value str">'Egrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>,
+            <span class="ruby-value str">'Eacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">201</span>,
+            <span class="ruby-value str">'Ecirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">202</span>,
+            <span class="ruby-value str">'Euml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">203</span>,
+            <span class="ruby-value str">'Igrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">204</span>,
+            <span class="ruby-value str">'Iacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">205</span>,
+            <span class="ruby-value str">'Icirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">206</span>,
+            <span class="ruby-value str">'Iuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">207</span>,
+            <span class="ruby-value str">'ETH'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">208</span>,
+            <span class="ruby-value str">'Ntilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">209</span>,
+            <span class="ruby-value str">'Ograve'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">210</span>,
+            <span class="ruby-value str">'Oacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">211</span>,
+            <span class="ruby-value str">'Ocirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">212</span>,
+            <span class="ruby-value str">'Otilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">213</span>,
+            <span class="ruby-value str">'Ouml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">214</span>,
+            <span class="ruby-value str">'times'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">215</span>,
+            <span class="ruby-value str">'Oslash'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">216</span>,
+            <span class="ruby-value str">'Ugrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">217</span>,
+            <span class="ruby-value str">'Uacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">218</span>,
+            <span class="ruby-value str">'Ucirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">219</span>,
+            <span class="ruby-value str">'Uuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">220</span>,
+            <span class="ruby-value str">'Yacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">221</span>,
+            <span class="ruby-value str">'THORN'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">222</span>,
+            <span class="ruby-value str">'szlig'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">223</span>,
+            <span class="ruby-value str">'agrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">224</span>,
+            <span class="ruby-value str">'aacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">225</span>,
+            <span class="ruby-value str">'acirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">226</span>,
+            <span class="ruby-value str">'atilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">227</span>,
+            <span class="ruby-value str">'auml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">228</span>,
+            <span class="ruby-value str">'aring'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">229</span>,
+            <span class="ruby-value str">'aelig'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">230</span>,
+            <span class="ruby-value str">'ccedil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">231</span>,
+            <span class="ruby-value str">'egrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">232</span>,
+            <span class="ruby-value str">'eacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">233</span>,
+            <span class="ruby-value str">'ecirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">234</span>,
+            <span class="ruby-value str">'euml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">235</span>,
+            <span class="ruby-value str">'igrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">236</span>,
+            <span class="ruby-value str">'iacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">237</span>,
+            <span class="ruby-value str">'icirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">238</span>,
+            <span class="ruby-value str">'iuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">239</span>,
+            <span class="ruby-value str">'eth'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">240</span>,
+            <span class="ruby-value str">'ntilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">241</span>,
+            <span class="ruby-value str">'ograve'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">242</span>,
+            <span class="ruby-value str">'oacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">243</span>,
+            <span class="ruby-value str">'ocirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">244</span>,
+            <span class="ruby-value str">'otilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">245</span>,
+            <span class="ruby-value str">'ouml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">246</span>,
+            <span class="ruby-value str">'divide'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">247</span>,
+            <span class="ruby-value str">'oslash'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">248</span>,
+            <span class="ruby-value str">'ugrave'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">249</span>,
+            <span class="ruby-value str">'uacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">250</span>,
+            <span class="ruby-value str">'ucirc'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">251</span>,
+            <span class="ruby-value str">'uuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">252</span>,
+            <span class="ruby-value str">'yacute'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">253</span>,
+            <span class="ruby-value str">'thorn'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>,
+            <span class="ruby-value str">'yuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">255</span>,
+            <span class="ruby-value str">'quot'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">34</span>,
+            <span class="ruby-value str">'apos'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">39</span>, <span class="ruby-comment cmt"># Wasn't present in the HTML entities set, but is defined in XML standard</span>
+            <span class="ruby-value str">'amp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">38</span>,
+            <span class="ruby-value str">'lt'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">60</span>,
+            <span class="ruby-value str">'gt'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">62</span>,
+            <span class="ruby-value str">'OElig'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">338</span>,
+            <span class="ruby-value str">'oelig'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">339</span>,
+            <span class="ruby-value str">'Scaron'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">352</span>,
+            <span class="ruby-value str">'scaron'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">353</span>,
+            <span class="ruby-value str">'Yuml'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">376</span>,
+            <span class="ruby-value str">'circ'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">710</span>,
+            <span class="ruby-value str">'tilde'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">732</span>,
+            <span class="ruby-value str">'ensp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8194</span>,
+            <span class="ruby-value str">'emsp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8195</span>,
+            <span class="ruby-value str">'thinsp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8201</span>,
+            <span class="ruby-value str">'zwnj'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8204</span>,
+            <span class="ruby-value str">'zwj'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8205</span>,
+            <span class="ruby-value str">'lrm'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8206</span>,
+            <span class="ruby-value str">'rlm'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8207</span>,
+            <span class="ruby-value str">'ndash'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8211</span>,
+            <span class="ruby-value str">'mdash'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8212</span>,
+            <span class="ruby-value str">'lsquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8216</span>,
+            <span class="ruby-value str">'rsquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8217</span>,
+            <span class="ruby-value str">'sbquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8218</span>,
+            <span class="ruby-value str">'ldquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8220</span>,
+            <span class="ruby-value str">'rdquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8221</span>,
+            <span class="ruby-value str">'bdquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8222</span>,
+            <span class="ruby-value str">'dagger'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8224</span>,
+            <span class="ruby-value str">'Dagger'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8225</span>,
+            <span class="ruby-value str">'permil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8240</span>,
+            <span class="ruby-value str">'lsaquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8249</span>,
+            <span class="ruby-value str">'rsaquo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8250</span>,
+            <span class="ruby-value str">'euro'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8364</span>,
+            <span class="ruby-value str">'fnof'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">402</span>,
+            <span class="ruby-value str">'Alpha'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">913</span>,
+            <span class="ruby-value str">'Beta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">914</span>,
+            <span class="ruby-value str">'Gamma'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">915</span>,
+            <span class="ruby-value str">'Delta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">916</span>,
+            <span class="ruby-value str">'Epsilon'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">917</span>,
+            <span class="ruby-value str">'Zeta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">918</span>,
+            <span class="ruby-value str">'Eta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">919</span>,
+            <span class="ruby-value str">'Theta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">920</span>,
+            <span class="ruby-value str">'Iota'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">921</span>,
+            <span class="ruby-value str">'Kappa'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">922</span>,
+            <span class="ruby-value str">'Lambda'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">923</span>,
+            <span class="ruby-value str">'Mu'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">924</span>,
+            <span class="ruby-value str">'Nu'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">925</span>,
+            <span class="ruby-value str">'Xi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">926</span>,
+            <span class="ruby-value str">'Omicron'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">927</span>,
+            <span class="ruby-value str">'Pi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">928</span>,
+            <span class="ruby-value str">'Rho'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">929</span>,
+            <span class="ruby-value str">'Sigma'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">931</span>,
+            <span class="ruby-value str">'Tau'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">932</span>,
+            <span class="ruby-value str">'Upsilon'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">933</span>,
+            <span class="ruby-value str">'Phi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">934</span>,
+            <span class="ruby-value str">'Chi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">935</span>,
+            <span class="ruby-value str">'Psi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">936</span>,
+            <span class="ruby-value str">'Omega'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">937</span>,
+            <span class="ruby-value str">'alpha'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">945</span>,
+            <span class="ruby-value str">'beta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">946</span>,
+            <span class="ruby-value str">'gamma'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">947</span>,
+            <span class="ruby-value str">'delta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">948</span>,
+            <span class="ruby-value str">'epsilon'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">949</span>,
+            <span class="ruby-value str">'zeta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">950</span>,
+            <span class="ruby-value str">'eta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">951</span>,
+            <span class="ruby-value str">'theta'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">952</span>,
+            <span class="ruby-value str">'iota'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">953</span>,
+            <span class="ruby-value str">'kappa'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">954</span>,
+            <span class="ruby-value str">'lambda'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">955</span>,
+            <span class="ruby-value str">'mu'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">956</span>,
+            <span class="ruby-value str">'nu'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">957</span>,
+            <span class="ruby-value str">'xi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">958</span>,
+            <span class="ruby-value str">'omicron'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">959</span>,
+            <span class="ruby-value str">'pi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">960</span>,
+            <span class="ruby-value str">'rho'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">961</span>,
+            <span class="ruby-value str">'sigmaf'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">962</span>,
+            <span class="ruby-value str">'sigma'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">963</span>,
+            <span class="ruby-value str">'tau'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">964</span>,
+            <span class="ruby-value str">'upsilon'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">965</span>,
+            <span class="ruby-value str">'phi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">966</span>,
+            <span class="ruby-value str">'chi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">967</span>,
+            <span class="ruby-value str">'psi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">968</span>,
+            <span class="ruby-value str">'omega'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">969</span>,
+            <span class="ruby-value str">'thetasym'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">977</span>,
+            <span class="ruby-value str">'upsih'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">978</span>,
+            <span class="ruby-value str">'piv'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">982</span>,
+            <span class="ruby-value str">'bull'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8226</span>,
+            <span class="ruby-value str">'hellip'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8230</span>,
+            <span class="ruby-value str">'prime'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8242</span>,
+            <span class="ruby-value str">'Prime'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8243</span>,
+            <span class="ruby-value str">'oline'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8254</span>,
+            <span class="ruby-value str">'frasl'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8260</span>,
+            <span class="ruby-value str">'weierp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8472</span>,
+            <span class="ruby-value str">'image'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8465</span>,
+            <span class="ruby-value str">'real'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8476</span>,
+            <span class="ruby-value str">'trade'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8482</span>,
+            <span class="ruby-value str">'alefsym'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8501</span>,
+            <span class="ruby-value str">'larr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8592</span>,
+            <span class="ruby-value str">'uarr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8593</span>,
+            <span class="ruby-value str">'rarr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8594</span>,
+            <span class="ruby-value str">'darr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8595</span>,
+            <span class="ruby-value str">'harr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8596</span>,
+            <span class="ruby-value str">'crarr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8629</span>,
+            <span class="ruby-value str">'lArr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8656</span>,
+            <span class="ruby-value str">'uArr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8657</span>,
+            <span class="ruby-value str">'rArr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8658</span>,
+            <span class="ruby-value str">'dArr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8659</span>,
+            <span class="ruby-value str">'hArr'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8660</span>,
+            <span class="ruby-value str">'forall'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8704</span>,
+            <span class="ruby-value str">'part'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8706</span>,
+            <span class="ruby-value str">'exist'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8707</span>,
+            <span class="ruby-value str">'empty'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8709</span>,
+            <span class="ruby-value str">'nabla'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8711</span>,
+            <span class="ruby-value str">'isin'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8712</span>,
+            <span class="ruby-value str">'notin'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8713</span>,
+            <span class="ruby-value str">'ni'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8715</span>,
+            <span class="ruby-value str">'prod'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8719</span>,
+            <span class="ruby-value str">'sum'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8721</span>,
+            <span class="ruby-value str">'minus'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8722</span>,
+            <span class="ruby-value str">'lowast'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8727</span>,
+            <span class="ruby-value str">'radic'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8730</span>,
+            <span class="ruby-value str">'prop'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8733</span>,
+            <span class="ruby-value str">'infin'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8734</span>,
+            <span class="ruby-value str">'ang'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8736</span>,
+            <span class="ruby-value str">'and'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8743</span>,
+            <span class="ruby-value str">'or'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8744</span>,
+            <span class="ruby-value str">'cap'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8745</span>,
+            <span class="ruby-value str">'cup'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8746</span>,
+            <span class="ruby-value str">'int'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8747</span>,
+            <span class="ruby-value str">'there4'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8756</span>,
+            <span class="ruby-value str">'sim'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8764</span>,
+            <span class="ruby-value str">'cong'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8773</span>,
+            <span class="ruby-value str">'asymp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8776</span>,
+            <span class="ruby-value str">'ne'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8800</span>,
+            <span class="ruby-value str">'equiv'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8801</span>,
+            <span class="ruby-value str">'le'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8804</span>,
+            <span class="ruby-value str">'ge'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8805</span>,
+            <span class="ruby-value str">'sub'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8834</span>,
+            <span class="ruby-value str">'sup'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8835</span>,
+            <span class="ruby-value str">'nsub'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8836</span>,
+            <span class="ruby-value str">'sube'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8838</span>,
+            <span class="ruby-value str">'supe'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8839</span>,
+            <span class="ruby-value str">'oplus'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8853</span>,
+            <span class="ruby-value str">'otimes'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8855</span>,
+            <span class="ruby-value str">'perp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8869</span>,
+            <span class="ruby-value str">'sdot'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8901</span>,
+            <span class="ruby-value str">'lceil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8968</span>,
+            <span class="ruby-value str">'rceil'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8969</span>,
+            <span class="ruby-value str">'lfloor'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8970</span>,
+            <span class="ruby-value str">'rfloor'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8971</span>,
+            <span class="ruby-value str">'lang'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9001</span>,
+            <span class="ruby-value str">'rang'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9002</span>,
+            <span class="ruby-value str">'loz'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9674</span>,
+            <span class="ruby-value str">'spades'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9824</span>,
+            <span class="ruby-value str">'clubs'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9827</span>,
+            <span class="ruby-value str">'hearts'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9829</span>,
+            <span class="ruby-value str">'diams'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">9830</span>,
+        }
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/&amp;(?:([a-zA-Z]+)|#([0-9]+)|#x([a-fA-F0-9]+));/</span>) {
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$1</span> <span class="ruby-keyword kw">then</span>
+                <span class="ruby-identifier">v</span> = <span class="ruby-ivar">@@xhtml_entity_replacements</span>[<span class="ruby-identifier">$1</span>]
+                <span class="ruby-comment cmt"># Nonstandard entity</span>
+                <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extra_entities</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Proc</span>
+                        <span class="ruby-identifier">v</span> = <span class="ruby-identifier">extra_entities</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">$1</span>)
+                    <span class="ruby-comment cmt"># Well, we expect a Hash here, but any container will do.</span>
+                    <span class="ruby-comment cmt"># As long as it's not a nil.</span>
+                    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">extra_entities</span>
+                        <span class="ruby-identifier">v</span> = <span class="ruby-identifier">extra_entities</span>[<span class="ruby-identifier">$1</span>]
+                    <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Unknown escape #{$1}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span>
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">$2</span>
+                <span class="ruby-identifier">v</span> = <span class="ruby-identifier">$2</span>.<span class="ruby-identifier">to_i</span>
+            <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">v</span> = <span class="ruby-identifier">$3</span>.<span class="ruby-identifier">hex</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-comment cmt"># v can be a String or an Integer</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">else</span> [<span class="ruby-identifier">v</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'U'</span>) <span class="ruby-keyword kw">end</span>
+        }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>
