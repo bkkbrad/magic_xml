@@ -19,8 +19,7 @@
 #ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #DEALINGS IN THE SOFTWARE.
 
-require 'test/unit'
-require 'magic_xml'
+require 'helper'
 
 # For tests
 require 'stringio'
