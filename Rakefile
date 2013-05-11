@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "magic_xml"
     gem.summary = %Q{magic/xml is a Ruby library for the convenient parsing of XML}
-    gem.description = %Q{This is the gem version of the code originally by taw.  See the orginal page at http://taw.chaosforge.org/magic_xml/.}
+    gem.description = %Q{This is a DEPRECATED gem version of the code originally by taw.  Please use the new gem 'magic-xml' by the original author.}
     gem.email = "bkkbrad@example.com"
     gem.homepage = "http://github.com/bkkbrad/magic_xml"
     gem.authors = ["bkkbrad", "taw"]

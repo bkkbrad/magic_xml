@@ -1,3 +1,4 @@
+warn "The 'magic_xml' gem has been deprecated; please use 'magic-xml' instead."
 #Copyright (c) 2006-2007 Tomasz Wegrzanowski <Tomasz.Wegrzanowski@gmail.com>
 #
 #Permission is hereby granted, free of charge, to any person obtaining a

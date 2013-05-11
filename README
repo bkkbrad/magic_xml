@@ -1,3 +1,6 @@
+THIS GEM IS *DEPRECATED*.
+Use the new version by Taw: https://github.com/taw/magic-xml
+
 Taw's magic/xml parser in Ruby. See http://taw.chaosforge.org/magic_xml/ for more information and usage examples.
 
 Taw licenses thusly, according to http://t-a-w.blogspot.com/2006/08/magicxml.html:
